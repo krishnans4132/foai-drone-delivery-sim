@@ -103,6 +103,7 @@ class GridEnvironment:
         self.weather_cost_multipliers: Dict[str, float] = (
             weather_cost_multipliers or dict(self.DEFAULT_WEATHER_COSTS)
         )
+        self.active_storm_blocked_cells: Set[Tuple[int, int]] = set()
 
     # -------------------------------------------------------------------------
     # Bounds & Traversability
@@ -123,7 +124,7 @@ class GridEnvironment:
         Rules:
         - Out-of-bounds: Impassable.
         - Obstacles: Always impassable.
-        - Blocked cells: Impassable (e.g., dynamic storm hazards, temporary closures).
+        - Blocked cells / Storm blocked cells: Impassable.
         - Restricted zones:
             - In 'Rain' or 'Storm': Impassable.
             - In 'Clear' or 'Windy': Traversable (with extra path cost).
@@ -133,6 +134,8 @@ class GridEnvironment:
         if pos in self.obstacles:
             return False
         if blocked_cells and pos in blocked_cells:
+            return False
+        if pos in self.active_storm_blocked_cells:
             return False
         if weather in ("Rain", "Storm") and pos in self.restricted_zones:
             return False

@@ -48,8 +48,10 @@ class Simulation:
             initial_weather=weather_cfg.get("initial_weather", "Clear"),
             transition_matrix=weather_cfg.get("transition_probabilities"),
             cost_multipliers=weather_cfg.get("cost_multipliers"),
+            change_interval_ticks=weather_cfg.get("change_interval_ticks", 10),
             rng=random.Random(self.seed + 1),
         )
+        self.weather_agent.apply_to_environment(self.env)
 
         self.delivery_manager = DeliveryManagerAgent(
             requests=config.get("delivery_requests", [])
@@ -136,7 +138,7 @@ class Simulation:
         """Advance the entire multi-agent simulation by one tick."""
         self.current_tick += 1
         # 1. Weather agent updates dynamic conditions
-        weather = self.weather_agent.step()
+        weather = self.weather_agent.step(env=self.env)
 
         # 2. Delivery manager assigns tasks to available drones
         self.delivery_manager.allocate_requests(list(self.drones.values()))

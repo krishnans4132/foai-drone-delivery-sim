@@ -47,6 +47,8 @@
   },
   "weather": {
     "initial_weather": "Clear",
+    "change_interval_ticks": 10,
+    "storm_cells_count": 5,
     "transition_probabilities": {
       "Clear": { "Clear": 0.70, "Windy": 0.20, "Rain": 0.08, "Storm": 0.02 },
       "Windy": { "Clear": 0.30, "Windy": 0.50, "Rain": 0.15, "Storm": 0.05 },
