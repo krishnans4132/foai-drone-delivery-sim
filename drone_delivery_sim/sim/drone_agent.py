@@ -133,6 +133,12 @@ class DroneAgent:
         self.resume_target: Optional[Tuple[int, int]] = None
         self.active_charger_target: Optional[Tuple[int, int]] = None
 
+        # Dynamic replanning telemetry & logs
+        self.replan_event_log: List[Dict[str, Any]] = []
+        self.last_perceived_weather: str = "Clear"
+        self.last_planned_cost: float = 0.0
+        self.replan_cost_threshold: float = 1.5
+
         # Telemetry & performance metrics
         self.total_distance_moved: float = 0.0
         self.total_energy_consumed: float = 0.0
@@ -228,39 +234,215 @@ class DroneAgent:
 
         return False
 
-    def plan_path_to(self, target: Tuple[int, int], env: Any, weather_str: str) -> bool:
+    def plan_path_to(
+        self,
+        target: Tuple[int, int],
+        env: Any,
+        weather_str: str,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
+    ) -> bool:
         """Execute route planning from current position to target using the configured planner."""
-        res = self.planner.search(self.position, target, env, weather=weather_str)
+        res = self.planner.search(self.position, target, env, weather=weather_str, blocked_cells=blocked_cells)
         if res.success and len(res.path) > 1:
             self.current_path = res.path[1:]  # Waypoints excluding current cell
+            self.last_planned_cost = res.cost
             return True
         elif res.success and len(res.path) == 1:
             self.current_path = []  # Already at target
+            self.last_planned_cost = 0.0
             return True
         else:
             self.current_path = []
             return False
 
-    def check_and_replan_if_needed(self, target: Tuple[int, int], env: Any, weather_str: str) -> None:
-        """Verify current planned trajectory; re-run planner if obstructed by dynamic changes."""
-        path_valid = True
-        if not self.current_path:
-            path_valid = False
+    def _log_replan_event(self, step_name: str, details: Dict[str, Any]) -> None:
+        """Record dynamic replanning step to internal event log."""
+        entry = {
+            "drone_id": self.drone_id,
+            "step": step_name,
+            "details": details,
+        }
+        self.replan_event_log.append(entry)
+
+    # -------------------------------------------------------------------------
+    # 4 EXPLICIT DYNAMIC REPLANNING STEPS (FOAI SPECIFICATION)
+    # -------------------------------------------------------------------------
+    def detect_environmental_change(self, env: Any, current_weather: str) -> Tuple[bool, str]:
+        """Step 1: Detect the change.
+
+        Detects if weather state shifted or if any waypoint on the active route
+        has become blocked or restricted.
+        """
+        weather_changed = (current_weather != self.last_perceived_weather)
+        reason = ""
+        if weather_changed:
+            reason = f"Weather shifted from {self.last_perceived_weather} to {current_weather}"
         else:
             for cell in self.current_path:
-                if not env.is_traversable(cell, weather=weather_str):
-                    path_valid = False
+                if not env.is_traversable(cell, weather=current_weather):
+                    reason = f"Cell {cell} along active route became impassable"
                     break
 
-        if not path_valid:
+        has_changed = bool(reason)
+        self.last_perceived_weather = current_weather
+        self._log_replan_event("STEP_1_DETECT_CHANGE", {"has_changed": has_changed, "reason": reason})
+        return has_changed, reason
+
+    def detect_change(self, env: Any, current_weather: str) -> Tuple[bool, str]:
+        """Alias for Step 1: Detect change."""
+        return self.detect_environmental_change(env, current_weather)
+
+    def check_route_suitability(
+        self,
+        env: Any,
+        current_weather: str,
+    ) -> Tuple[bool, str]:
+        """Step 2: Check whether the current route is still suitable.
+
+        Definition of 'significant change':
+        1. A remaining-route cell becomes blocked or restricted under current weather.
+        2. The cumulative cost of the remaining route rises above the configurable threshold
+           (replan_cost_threshold * baseline_cost).
+        """
+        if not self.current_path:
+            self._log_replan_event("STEP_2_CHECK_SUITABILITY", {"is_suitable": False, "reason": "Path is empty"})
+            return False, "Path is empty"
+
+        # Check traversability of all remaining waypoints
+        for cell in self.current_path:
+            if not env.is_traversable(cell, weather=current_weather):
+                reason = f"Remaining waypoint {cell} is blocked or restricted under {current_weather}"
+                self._log_replan_event("STEP_2_CHECK_SUITABILITY", {"is_suitable": False, "reason": reason})
+                return False, reason
+
+        # Check cost escalation
+        current_remaining_cost = sum(
+            env.get_move_cost(
+                self.position if i == 0 else self.current_path[i - 1],
+                self.current_path[i],
+                weather=current_weather,
+            )
+            for i in range(len(self.current_path))
+        )
+
+        if self.last_planned_cost > 0:
+            cost_ratio = current_remaining_cost / self.last_planned_cost
+            if cost_ratio > self.replan_cost_threshold:
+                reason = (
+                    f"Route cost escalated beyond threshold: {current_remaining_cost:.2f} vs "
+                    f"baseline {self.last_planned_cost:.2f} (ratio {cost_ratio:.2f} > {self.replan_cost_threshold})"
+                )
+                self._log_replan_event("STEP_2_CHECK_SUITABILITY", {"is_suitable": False, "reason": reason})
+                return False, reason
+
+        self._log_replan_event("STEP_2_CHECK_SUITABILITY", {"is_suitable": True, "reason": "Route is clear and within cost bounds"})
+        return True, "Route is suitable"
+
+    def recompute_route_astar(
+        self,
+        target: Tuple[int, int],
+        env: Any,
+        current_weather: str,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
+    ) -> bool:
+        """Step 3: Run A* again if necessary from current position."""
+        res = self.planner.search(self.position, target, env, weather=current_weather, blocked_cells=blocked_cells)
+        success = res.success
+        if success:
+            if len(res.path) > 1:
+                self.current_path = res.path[1:]
+            else:
+                self.current_path = []
+            self.last_planned_cost = res.cost
             self.total_replans += 1
-            self.plan_path_to(target, env, weather_str)
+
+        reason = (
+            f"A* recomputed path with {len(self.current_path)} waypoints (cost {res.cost:.2f})"
+            if success else "A* found no alternative path"
+        )
+        self._log_replan_event("STEP_3_RECOMPUTE_ASTAR", {
+            "success": success,
+            "cost": res.cost,
+            "nodes_expanded": res.nodes_expanded,
+            "reason": reason
+        })
+        return success
+
+    def run_astar_again(
+        self,
+        target: Tuple[int, int],
+        env: Any,
+        current_weather: str,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
+    ) -> bool:
+        """Alias for Step 3: Run A* again."""
+        return self.recompute_route_astar(target, env, current_weather, blocked_cells=blocked_cells)
+
+    def continue_with_new_route(self) -> None:
+        """Step 4: Continue the delivery using the new route."""
+        next_wp = self.current_path[0] if self.current_path else None
+        self._log_replan_event("STEP_4_CONTINUE_ROUTE", {
+            "next_waypoint": next_wp,
+            "remaining_waypoints": len(self.current_path),
+        })
+
+    def handle_dynamic_replanning(
+        self,
+        target: Tuple[int, int],
+        env: Any,
+        current_weather: str,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
+    ) -> bool:
+        """Execute the 4-step dynamic replanning sequence:
+        (1) detect the change
+        (2) check whether the current route is still suitable
+        (3) run A* again if necessary from current position
+        (4) continue with the new route.
+        """
+        self.detect_environmental_change(env, current_weather)
+        is_suitable, _ = self.check_route_suitability(env, current_weather)
+
+        if not is_suitable:
+            success = self.recompute_route_astar(target, env, current_weather, blocked_cells=blocked_cells)
+            if success:
+                self.continue_with_new_route()
+                return True
+            return False
+
+        return True
+
+    def check_and_replan_if_needed(
+        self,
+        target: Tuple[int, int],
+        env: Any,
+        weather_str: str,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
+    ) -> None:
+        """Orchestrate dynamic replanning using the 4 explicit steps."""
+        self.handle_dynamic_replanning(target, env, weather_str, blocked_cells=blocked_cells)
+
+    def get_intended_next_position(self) -> Tuple[int, int]:
+        """Return the coordinate the drone intends to occupy next tick."""
+        if self.state in (DroneState.CHARGING, DroneState.HOVERING, DroneState.DONE):
+            return self.position
+        if not self.current_path:
+            return self.position
+        return self.current_path[0]
 
     # -------------------------------------------------------------------------
     # 3. ACT
     # -------------------------------------------------------------------------
-    def step(self, env: Any, weather_str: str) -> DroneAction:
+    def step(
+        self,
+        env: Any,
+        weather_str: str,
+        override_action: Optional[DroneAction] = None,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
+    ) -> DroneAction:
         """Execute one complete Perceive -> Plan -> Act cycle."""
+        if override_action == DroneAction.HOVER:
+            return self._hover_action(env, weather_str)
+
         perception = self.perceive(env, weather_str)
 
         # ---------------------------------------------------------------------

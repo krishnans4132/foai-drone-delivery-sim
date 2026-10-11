@@ -58,6 +58,8 @@ class Simulation:
         )
         self.metrics = MetricsTracker()
         self.current_tick = 0
+        self.collision_count = 0
+        self.total_collisions_avoided = 0
         self.drones: Dict[str, DroneAgent] = {}
 
         self._initialize_fleet(target_drones)
@@ -132,22 +134,104 @@ class Simulation:
         return False
 
     def step(self) -> None:
-        """Advance the entire multi-agent simulation by one tick."""
+        """Advance the entire multi-agent simulation by one tick with collision avoidance."""
         self.current_tick += 1
+
         # 1. Weather agent updates dynamic conditions
         weather = self.weather_agent.step(env=self.env)
+        weather_val = weather.value
 
         # 2. Delivery manager assigns tasks to available drones
         self.delivery_manager.allocate_requests(
             list(self.drones.values()),
             env=self.env,
-            weather_str=weather.value,
+            weather_str=weather_val,
             current_tick=self.current_tick,
         )
 
-        # 3. Each drone perceives, plans, acts
-        for drone in list(self.drones.values()):
-            drone.step(self.env, weather.value)
+        # 3. Collision avoidance & coordinated movement reservation
+        # Drones prioritized: carrying package > lower battery > drone_id
+        drone_list = list(self.drones.values())
+        drone_list.sort(key=lambda d: (not d.has_package, d.battery, d.drone_id))
+
+        reserved_cells: Dict[Tuple[int, int], str] = {}
+        approved_actions: Dict[str, Any] = {}
+
+        # First pass: Determine intent and resolve conflicts via reservation/hover/replanning
+        for drone in drone_list:
+            curr_pos = drone.position
+            # Perception & initial intention
+            perception = drone.perceive(self.env, weather_val)
+            target = perception.destination
+
+            # Check if replan needed for environmental changes
+            if target is not None:
+                drone.check_and_replan_if_needed(target, self.env, weather_val)
+
+            intended_pos = drone.get_intended_next_position()
+
+            # Conflict evaluation
+            conflict = False
+            # Check A: Cell traversability (obstacle / storm)
+            if not self.env.is_traversable(intended_pos, weather=weather_val):
+                conflict = True
+            # Check B: Cell already reserved by higher-priority drone for this tick
+            elif intended_pos in reserved_cells:
+                conflict = True
+            # Check C: Swap collision (another drone at intended_pos wanting to move to curr_pos)
+            else:
+                for other in drone_list:
+                    if other.drone_id != drone.drone_id and other.position == intended_pos:
+                        if other.get_intended_next_position() == curr_pos:
+                            conflict = True
+                            break
+
+            if conflict and intended_pos != curr_pos and target is not None:
+                # Try dynamic replan avoiding reserved cells and conflict cell
+                blocked_avoidance = set(reserved_cells.keys()) | {intended_pos}
+                replan_ok = drone.handle_dynamic_replanning(
+                    target, self.env, weather_val, blocked_cells=blocked_avoidance
+                )
+                alt_pos = drone.get_intended_next_position()
+                if replan_ok and alt_pos != curr_pos and alt_pos not in reserved_cells and self.env.is_traversable(alt_pos, weather=weather_val):
+                    # Found clear alternate path!
+                    reserved_cells[alt_pos] = drone.drone_id
+                    approved_actions[drone.drone_id] = None
+                    self.total_collisions_avoided += 1
+                else:
+                    # No clear alternate move: Hover at current position (Wait rule)
+                    reserved_cells[curr_pos] = drone.drone_id
+                    from .drone_agent import DroneAction
+                    approved_actions[drone.drone_id] = DroneAction.HOVER
+                    self.total_collisions_avoided += 1
+            elif conflict:
+                # Hover at current position
+                reserved_cells[curr_pos] = drone.drone_id
+                from .drone_agent import DroneAction
+                approved_actions[drone.drone_id] = DroneAction.HOVER
+                self.total_collisions_avoided += 1
+            else:
+                # Successfully reserve intended cell
+                reserved_cells[intended_pos] = drone.drone_id
+                approved_actions[drone.drone_id] = None
+
+        # Second pass: Actuate drones
+        for drone in drone_list:
+            override_act = approved_actions.get(drone.drone_id)
+            prev_completed = len(drone.completed_tasks)
+            drone.step(self.env, weather_val, override_action=override_act)
+
+            # Record metrics
+            if len(drone.completed_tasks) > prev_completed:
+                self.metrics.record_delivery(latency=self.current_tick, success=True)
+            self.metrics.record_step(drone.drone_id, distance=1.0, battery_cost=drone.move_cost)
+
+        # 4. Invariant assertion & collision counting (target is strictly 0)
+        final_positions = [d.position for d in self.drones.values()]
+        shared_cells = len(final_positions) - len(set(final_positions))
+        self.collision_count += shared_cells
+        self.metrics.total_collisions_avoided = self.total_collisions_avoided
+        self.metrics.total_replans_triggered = sum(d.total_replans for d in self.drones.values())
 
     def run_headless(self, max_ticks: int = 100) -> Dict[str, Any]:
         """Run the simulation without UI for the specified duration."""
