@@ -12,7 +12,7 @@ import random
 from .environment import GridEnvironment
 from .weather_agent import WeatherAgent
 from .delivery_manager import DeliveryManagerAgent
-from .drone_agent import DroneAgent
+from .drone_agent import DroneAgent, create_drone_fleet
 from .metrics import MetricsTracker
 
 
@@ -77,16 +77,13 @@ class Simulation:
         return free_slots
 
     def _initialize_fleet(self, count: int) -> None:
-        """Initialize the drone fleet with capacity validation."""
+        """Initialize the drone fleet with capacity validation using factory function."""
         valid_count, msg = self.validate_drone_count(count)
         if not valid_count:
             print(f"[Warning] {msg}")
 
-        for i in range(1, count + 1):
-            success = self.add_drone()
-            if not success:
-                print(f"[Warning] Could only spawn {len(self.drones)} of {count} requested drones.")
-                break
+        fleet = create_drone_fleet(count, self.config, self.env)
+        self.drones = {d.drone_id: d for d in fleet}
 
     def validate_drone_count(self, requested_count: int) -> Tuple[bool, str]:
         """Validate if requested drone count can fit into the grid and start locations."""
