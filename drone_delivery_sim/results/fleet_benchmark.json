@@ -1,0 +1,61 @@
+{
+  "scenario": "simple_clear",
+  "seed": 42,
+  "rows": [
+    {
+      "scenario": "simple_clear",
+      "seed": 42,
+      "fleet_size": 1,
+      "deliveries_completed": 1,
+      "on_time_rate_pct": 100.0,
+      "average_delivery_time_ticks": 28.0,
+      "total_distance": 26.0,
+      "collisions": 0,
+      "utilization_pct": 22.5
+    },
+    {
+      "scenario": "simple_clear",
+      "seed": 42,
+      "fleet_size": 2,
+      "deliveries_completed": 2,
+      "on_time_rate_pct": 100.0,
+      "average_delivery_time_ticks": 32.5,
+      "total_distance": 61.0,
+      "collisions": 0,
+      "utilization_pct": 26.2
+    },
+    {
+      "scenario": "simple_clear",
+      "seed": 42,
+      "fleet_size": 4,
+      "deliveries_completed": 4,
+      "on_time_rate_pct": 100.0,
+      "average_delivery_time_ticks": 37.75,
+      "total_distance": 142.0,
+      "collisions": 0,
+      "utilization_pct": 30.4
+    },
+    {
+      "scenario": "simple_clear",
+      "seed": 42,
+      "fleet_size": 8,
+      "deliveries_completed": 5,
+      "on_time_rate_pct": 100.0,
+      "average_delivery_time_ticks": 38.6,
+      "total_distance": 182.0,
+      "collisions": 0,
+      "utilization_pct": 19.5
+    },
+    {
+      "scenario": "simple_clear",
+      "seed": 42,
+      "fleet_size": 12,
+      "deliveries_completed": 5,
+      "on_time_rate_pct": 100.0,
+      "average_delivery_time_ticks": 35.4,
+      "total_distance": 167.0,
+      "collisions": 0,
+      "utilization_pct": 11.9
+    }
+  ]
+}
