@@ -293,7 +293,12 @@ def main():
     else:
         print("\n  Starting graphical interface (Pygame)...")
         from ui.renderer import UIRenderer
-        renderer = UIRenderer(sim)
+        renderer = UIRenderer(
+            sim,
+            base_config=base_config,
+            scenario_name=scenario_name,
+            scenario_applier=apply_scenario,
+        )
         renderer.run_loop()
 
 
