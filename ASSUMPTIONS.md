@@ -13,3 +13,5 @@ This document tracks any design assumptions or clarifications made during implem
 | Step 4 | Priority queue ordering | Tuples stored as (f_score, counter, node) with integer counter. | Prevents coordinate comparison failures and ensures deterministic tie-breaking. |
 | Step 5 | Battery safety buffer | Detour triggered if battery cannot cover remaining route + target-to-charger + 10 unit buffer. | Avoids stranding drones in remote cells. |
 | Step 5 | Task resumption | Drones recharge to 100% then resume GOING_TO_PICKUP or DELIVERING. | Guarantees task delivery completion following charge detours. |
+| Step 6 | Multi-attribute scoring | Weighted utility model: distance (0.35), battery (0.25), workload (0.25), availability (0.15). | Shares workload fairly while selecting closest and healthiest drones. |
+| Step 6 | Manager-Drone boundary | Delivery Manager strictly assigns tasks and never controls movement or alters drone positions. | Maintains clear agent boundaries per PEAS specification. |

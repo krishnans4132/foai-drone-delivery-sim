@@ -138,7 +138,12 @@ class Simulation:
         weather = self.weather_agent.step(env=self.env)
 
         # 2. Delivery manager assigns tasks to available drones
-        self.delivery_manager.allocate_requests(list(self.drones.values()))
+        self.delivery_manager.allocate_requests(
+            list(self.drones.values()),
+            env=self.env,
+            weather_str=weather.value,
+            current_tick=self.current_tick,
+        )
 
         # 3. Each drone perceives, plans, acts
         for drone in list(self.drones.values()):
