@@ -1,0 +1,503 @@
+[T0001] [ASSIGNMENT        ] Request REQ-003 assigned to DRONE-04 | Scores: DRONE-01=0.869(dist=0.62,bat=1.00,wl=1.00,av=1.00); DRONE-02=0.877(dist=0.65,bat=1.00,wl=1.00,av=1.00); DRONE-03=0.877(dist=0.65,bat=1.00,wl=1.00,av=1.00); DRONE-04=0.886(dist=0.68,bat=1.00,wl=1.00,av=1.00); DRONE-05=0.886(dist=0.68,bat=1.00,wl=1.00,av=1.00); DRONE-06=0.886(dist=0.68,bat=1.00,wl=1.00,av=1.00)
+[T0001] [ASSIGNMENT        ] Request REQ-001 assigned to DRONE-05 | Scores: DRONE-01=0.939(dist=0.82,bat=1.00,wl=1.00,av=1.00); DRONE-02=0.948(dist=0.85,bat=1.00,wl=1.00,av=1.00); DRONE-03=0.948(dist=0.85,bat=1.00,wl=1.00,av=1.00); DRONE-04=0.781(dist=0.88,bat=1.00,wl=0.90,av=0.00); DRONE-05=0.956(dist=0.88,bat=1.00,wl=1.00,av=1.00); DRONE-06=0.956(dist=0.88,bat=1.00,wl=1.00,av=1.00)
+[T0001] [ASSIGNMENT        ] Request REQ-002 assigned to DRONE-06 | Scores: DRONE-01=0.877(dist=0.65,bat=1.00,wl=1.00,av=1.00); DRONE-02=0.886(dist=0.68,bat=1.00,wl=1.00,av=1.00); DRONE-03=0.886(dist=0.68,bat=1.00,wl=1.00,av=1.00); DRONE-04=0.720(dist=0.70,bat=1.00,wl=0.90,av=0.00); DRONE-05=0.720(dist=0.70,bat=1.00,wl=0.90,av=0.00); DRONE-06=0.895(dist=0.70,bat=1.00,wl=1.00,av=1.00)
+[T0001] [ASSIGNMENT        ] Request REQ-005 assigned to DRONE-02 | Scores: DRONE-01=0.860(dist=0.60,bat=1.00,wl=1.00,av=1.00); DRONE-02=0.869(dist=0.62,bat=1.00,wl=1.00,av=1.00); DRONE-03=0.869(dist=0.62,bat=1.00,wl=1.00,av=1.00); DRONE-04=0.703(dist=0.65,bat=1.00,wl=0.90,av=0.00); DRONE-05=0.685(dist=0.60,bat=1.00,wl=0.90,av=0.00); DRONE-06=0.703(dist=0.65,bat=1.00,wl=0.90,av=0.00)
+[T0001] [ASSIGNMENT        ] Request REQ-004 assigned to DRONE-03 | Scores: DRONE-01=0.764(dist=0.33,bat=1.00,wl=1.00,av=1.00); DRONE-02=0.598(dist=0.35,bat=1.00,wl=0.90,av=0.00); DRONE-03=0.772(dist=0.35,bat=1.00,wl=1.00,av=1.00); DRONE-04=0.606(dist=0.38,bat=1.00,wl=0.90,av=0.00); DRONE-05=0.606(dist=0.38,bat=1.00,wl=0.90,av=0.00); DRONE-06=0.606(dist=0.38,bat=1.00,wl=0.90,av=0.00)
+[T0001] [ASSIGNMENT        ] Request REQ-008 assigned to DRONE-01 | Scores: DRONE-01=0.781(dist=0.38,bat=1.00,wl=1.00,av=1.00); DRONE-02=0.615(dist=0.40,bat=1.00,wl=0.90,av=0.00); DRONE-03=0.615(dist=0.40,bat=1.00,wl=0.90,av=0.00); DRONE-04=0.624(dist=0.42,bat=1.00,wl=0.90,av=0.00); DRONE-05=0.624(dist=0.42,bat=1.00,wl=0.90,av=0.00); DRONE-06=0.624(dist=0.42,bat=1.00,wl=0.90,av=0.00)
+[T0001] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0001] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0001] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0001] [CONFLICT_AVOIDED  ] DRONE-02 resolved via HOVER
+[T0001] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0002] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0002] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0002] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0002] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0003] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0003] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0003] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0004] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0004] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0004] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
+[T0005] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0005] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0006] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0006] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0007] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0007] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0007] [PICKUP            ] DRONE-05 picked up REQ-001 at (2, 5)
+[T0008] [WEATHER_CHANGE    ] Windy -> Clear
+[T0008] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0008] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0009] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0009] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0010] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0010] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0011] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0011] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0012] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0012] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0013] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0013] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0014] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0014] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0014] [PICKUP            ] DRONE-04 picked up REQ-003 at (7, 8)
+[T0014] [PICKUP            ] DRONE-06 picked up REQ-002 at (12, 2)
+[T0015] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0015] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0016] [WEATHER_CHANGE    ] Clear -> Windy
+[T0016] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0016] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0017] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0017] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0017] [PICKUP            ] DRONE-02 picked up REQ-005 at (1, 15)
+[T0018] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0018] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0019] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0019] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0019] [CONFLICT_AVOIDED  ] DRONE-02 resolved via HOVER
+[T0020] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0020] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0021] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0021] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0022] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0022] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0022] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0022] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0023] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0023] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0023] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0023] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0024] [WEATHER_CHANGE    ] Windy -> Clear
+[T0024] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0024] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0024] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0024] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0025] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0025] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0025] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0025] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0026] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0026] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0026] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0026] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0026] [DELIVERY          ] DRONE-04 delivered REQ-003 at (16, 6) [ON TIME]
+[T0027] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0027] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0027] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0027] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0028] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0028] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0028] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0028] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0028] [PICKUP            ] DRONE-01 picked up REQ-008 at (11, 14)
+[T0029] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0029] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0029] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0029] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0030] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0030] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0030] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0030] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0031] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0031] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0031] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0031] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0032] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0032] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0032] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0032] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0033] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0033] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0033] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0033] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0034] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0034] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0034] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0034] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0035] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0035] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0035] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0035] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0036] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0036] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0036] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0036] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0037] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0037] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0037] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0037] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0037] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0037] [DELIVERY          ] DRONE-05 delivered REQ-001 at (18, 18) [ON TIME]
+[T0038] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0038] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0038] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0038] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0039] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0039] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0039] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0039] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0040] [WEATHER_CHANGE    ] Clear -> Windy
+[T0040] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0040] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0040] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0040] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0041] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0041] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0041] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0041] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0042] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0042] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0042] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0042] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0043] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0043] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0043] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0043] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0044] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0044] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0044] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0044] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0045] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0045] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0045] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0045] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0046] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0046] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0046] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0046] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0047] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0047] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0047] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0047] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0048] [WEATHER_CHANGE    ] Windy -> Rain
+[T0048] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0048] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0048] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0048] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0048] [DELIVERY          ] DRONE-01 delivered REQ-008 at (5, 2) [ON TIME]
+[T0049] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0049] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0049] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0049] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0049] [DELIVERY          ] DRONE-02 delivered REQ-005 at (17, 3) [ON TIME]
+[T0050] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0050] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0050] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0050] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0051] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0051] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0051] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0051] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0052] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0052] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0052] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0052] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0053] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0053] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0053] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0053] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0054] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0054] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0054] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0054] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0055] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0055] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0055] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0055] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0056] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0056] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0056] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0056] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0057] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0057] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0057] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0057] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0058] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0058] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0058] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0058] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0059] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0059] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0059] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0059] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0060] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0060] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0060] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0060] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0061] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0061] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0061] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0061] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0062] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0062] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0062] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0062] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0063] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0063] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0063] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0063] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0064] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0064] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0064] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0064] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0065] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0065] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0065] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0065] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0066] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0066] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0066] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0066] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0067] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0067] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0067] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0067] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0068] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0068] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0068] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0068] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0069] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0069] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0069] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0069] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0070] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0070] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0070] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0070] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0071] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0071] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0071] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0071] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0072] [WEATHER_CHANGE    ] Rain -> Clear
+[T0072] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0072] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0072] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0072] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0073] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0073] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0073] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0073] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0074] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0074] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0074] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0074] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0075] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0075] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0075] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0075] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0076] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0076] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0076] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0076] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0077] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0077] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0077] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0077] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0078] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0078] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0078] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0078] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0079] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0079] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0079] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0079] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0080] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0080] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0080] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0080] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0081] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0081] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0081] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0081] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0082] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0082] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0082] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0082] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0083] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0083] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0083] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0083] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0084] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0084] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0084] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0084] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0085] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0085] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0085] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0085] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0086] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0086] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0086] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0086] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0087] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0087] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0087] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0087] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0088] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0088] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0088] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0088] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0089] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0089] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0089] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0089] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0090] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0090] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0090] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0090] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0091] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0091] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0091] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0091] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0092] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0092] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0092] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0092] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0093] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0093] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0093] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0093] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0094] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0094] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0094] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0094] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0095] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0095] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0095] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0095] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0096] [WEATHER_CHANGE    ] Clear -> Rain
+[T0096] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0096] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0096] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0096] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0097] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0097] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0097] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0097] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0098] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0098] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0098] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0098] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0099] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0099] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0099] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0099] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0100] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
+[T0100] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0100] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0100] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0101] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0101] [EXPIRY            ] Request REQ-006 expired (deadline missed)
+[T0101] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0101] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0102] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0102] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0102] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0103] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0103] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0103] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0104] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0104] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0104] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0105] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0105] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0105] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0106] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0106] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0106] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0107] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0107] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0107] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0108] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0108] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0108] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0109] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0109] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0109] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0110] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
+[T0110] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0110] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0111] [EXPIRY            ] Request REQ-007 expired (deadline missed)
+[T0111] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0111] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0112] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0112] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0113] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0113] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0114] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0114] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0115] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0115] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0116] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0116] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0117] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0117] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0118] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0118] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0119] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0119] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0120] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0120] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0121] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0121] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0122] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0122] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0123] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0123] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0124] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0124] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0125] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0125] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0126] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0126] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0127] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0127] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0128] [WEATHER_CHANGE    ] Rain -> Windy
+[T0128] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0128] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0129] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0129] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0130] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0130] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0131] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0131] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0132] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0132] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0133] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0133] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0134] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0134] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0135] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0135] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0136] [WEATHER_CHANGE    ] Windy -> Rain
+[T0136] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0136] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0137] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0137] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0138] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0138] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0139] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0139] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0140] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0140] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0141] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0141] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0142] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0142] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0143] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0143] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0144] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0144] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0145] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0145] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0146] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0146] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0147] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0147] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0148] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0148] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0149] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0149] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0150] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
+[T0150] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER

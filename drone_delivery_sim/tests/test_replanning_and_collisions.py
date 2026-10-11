@@ -96,6 +96,104 @@ def test_dynamic_replanning_on_cost_escalation():
     assert is_suitable is False
 
 
+def test_simulation_allows_pickup_and_delivery_while_holding_own_cell():
+    """A drone's own cell reservation must not block pickup or delivery actions."""
+    config = {
+        "seed": 17,
+        "grid": {"width": 4, "height": 3},
+        "fleet": {
+            "num_drones": 1,
+            "start_locations": [[0, 1]],
+            "battery_capacity": 100,
+            "low_battery_threshold": 10,
+        },
+        "environment": {
+            "obstacles": [],
+            "restricted_zones": [],
+            "charging_stations": [[0, 1]],
+        },
+        "weather": {
+            "initial_weather": "Clear",
+            "change_interval_ticks": 100,
+            "transition_probabilities": {
+                name: {other: float(name == other) for other in ("Clear", "Windy", "Rain", "Storm")}
+                for name in ("Clear", "Windy", "Rain", "Storm")
+            },
+            "cost_multipliers": {"Clear": 1, "Windy": 1.5, "Rain": 2, "Storm": 3},
+        },
+        "delivery_requests": [
+            {
+                "id": "REQ-LOCAL",
+                "pickup": [0, 1],
+                "destination": [2, 1],
+                "deadline_ticks": 20,
+            }
+        ],
+    }
+    sim = Simulation(config)
+
+    for _ in range(5):
+        sim.step()
+
+    summary = sim.metrics.get_summary()
+    assert summary["scenario_summary"]["deliveries_completed"] == 1
+    assert summary["scenario_summary"]["deliveries_on_time"] == 1
+    assert sim.collision_count == 0
+    assert any("[PICKUP" in entry for entry in sim.metrics.event_log.get_entries())
+    assert any("[DELIVERY" in entry for entry in sim.metrics.event_log.get_entries())
+
+
+def test_simulation_event_log_exports_all_replanning_steps():
+    """Successful integration replans export their four-step trace."""
+    config = {
+        "seed": 23,
+        "grid": {"width": 5, "height": 3},
+        "fleet": {
+            "num_drones": 1,
+            "start_locations": [[0, 1]],
+            "battery_capacity": 100,
+            "low_battery_threshold": 10,
+        },
+        "environment": {
+            "obstacles": [],
+            "restricted_zones": [],
+            "charging_stations": [[0, 1]],
+        },
+        "weather": {
+            "initial_weather": "Clear",
+            "change_interval_ticks": 100,
+            "transition_probabilities": {
+                name: {other: float(name == other) for other in ("Clear", "Windy", "Rain", "Storm")}
+                for name in ("Clear", "Windy", "Rain", "Storm")
+            },
+        },
+        "delivery_requests": [
+            {
+                "id": "REQ-REPLAN-LOG",
+                "pickup": [0, 1],
+                "destination": [4, 1],
+                "deadline_ticks": 30,
+            }
+        ],
+    }
+    sim = Simulation(config)
+    sim.step()  # Arrive at pickup.
+    sim.step()  # Pick up package and begin delivery route.
+    drone = sim.drones["DRONE-01"]
+    assert drone.current_path
+    sim.env.obstacles.add(drone.current_path[0])
+    sim.step()
+
+    logged = [
+        entry for entry in sim.metrics.event_log.get_entries()
+        if "[REPLAN_STEP" in entry
+    ]
+    assert any("STEP_1_DETECT_CHANGE" in entry for entry in logged)
+    assert any("STEP_2_CHECK_SUITABILITY" in entry for entry in logged)
+    assert any("STEP_3_RECOMPUTE_ASTAR" in entry for entry in logged)
+    assert any("STEP_4_CONTINUE_ROUTE" in entry for entry in logged)
+
+
 @pytest.mark.parametrize("fleet_size", [2, 5, 10])
 @pytest.mark.parametrize("seed", [42, 101, 2026])
 def test_collision_avoidance_no_shared_cells(base_config, fleet_size, seed):

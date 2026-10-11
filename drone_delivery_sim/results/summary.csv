@@ -1,0 +1,7 @@
+scenario,fleet_size,total_requests,deliveries_completed,deliveries_on_time,deliveries_failed,completion_rate_pct,on_time_rate_pct,total_distance,total_battery,avg_utilisation_pct,collisions,conflicts_resolved,total_replans
+simple_clear_n2,2,5,2,2,3,40.0,100.0,61.0,61.5,26.2,0,1,0
+simple_clear_n4,4,5,4,4,1,80.0,100.0,140.0,141.5,30.0,0,3,0
+busy_city_n3,3,8,3,3,5,37.5,100.0,98.0,121.0,22.4,0,2,0
+busy_city_n6,6,8,4,4,2,50.0,100.0,184.0,385.75,21.0,0,267,0
+storm_stress_n4,4,10,1,1,6,10.0,100.0,112.0,345.5,14.5,0,3,2
+storm_stress_n8,8,10,2,2,2,20.0,100.0,208.0,709.5,13.4,0,678,6

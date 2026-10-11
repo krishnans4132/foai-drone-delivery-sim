@@ -22,7 +22,9 @@
       [2, 0],
       [1, 1],
       [0, 3],
-      [3, 0]
+      [3, 0],
+      [1, 2],
+      [2, 1]
     ]
   },
   "environment": {
@@ -100,20 +102,118 @@
     }
   ],
   "scenarios": {
+    "simple_clear": {
+      "description": "Simple / Clear: calm weather, sparse requests, small fleet. Baseline sanity check.",
+      "num_drones": 2,
+      "max_ticks": 120,
+      "weather_override": {
+        "initial_weather": "Clear",
+        "change_interval_ticks": 20,
+        "storm_cells_count": 2,
+        "transition_probabilities": {
+          "Clear": { "Clear": 0.90, "Windy": 0.08, "Rain": 0.02, "Storm": 0.00 },
+          "Windy": { "Clear": 0.60, "Windy": 0.35, "Rain": 0.05, "Storm": 0.00 },
+          "Rain":  { "Clear": 0.50, "Windy": 0.35, "Rain": 0.15, "Storm": 0.00 },
+          "Storm": { "Clear": 0.70, "Windy": 0.20, "Rain": 0.10, "Storm": 0.00 }
+        }
+      }
+    },
+    "busy_city": {
+      "description": "Busy City: moderate weather variability, dense requests, mid-size fleet. Tests workload sharing.",
+      "num_drones": 4,
+      "max_ticks": 150,
+      "extra_requests": [
+        {
+          "id": "REQ-006",
+          "pickup": [6, 3],
+          "destination": [13, 17],
+          "deadline_ticks": 100,
+          "package_weight": 1.2
+        },
+        {
+          "id": "REQ-007",
+          "pickup": [17, 7],
+          "destination": [3, 10],
+          "deadline_ticks": 110,
+          "package_weight": 2.0
+        },
+        {
+          "id": "REQ-008",
+          "pickup": [11, 14],
+          "destination": [5, 2],
+          "deadline_ticks": 95,
+          "package_weight": 0.8
+        }
+      ],
+      "weather_override": {
+        "initial_weather": "Windy",
+        "change_interval_ticks": 8,
+        "storm_cells_count": 4,
+        "transition_probabilities": {
+          "Clear": { "Clear": 0.60, "Windy": 0.25, "Rain": 0.12, "Storm": 0.03 },
+          "Windy": { "Clear": 0.20, "Windy": 0.55, "Rain": 0.20, "Storm": 0.05 },
+          "Rain":  { "Clear": 0.10, "Windy": 0.30, "Rain": 0.50, "Storm": 0.10 },
+          "Storm": { "Clear": 0.10, "Windy": 0.25, "Rain": 0.45, "Storm": 0.20 }
+        }
+      }
+    },
+    "storm_stress": {
+      "description": "Storm Stress Test: frequent storms, restricted zones, tight deadlines. Tests replanning and collision avoidance.",
+      "num_drones": 5,
+      "max_ticks": 200,
+      "extra_requests": [
+        {
+          "id": "REQ-006",
+          "pickup": [6, 3],
+          "destination": [13, 17],
+          "deadline_ticks": 80,
+          "package_weight": 1.2
+        },
+        {
+          "id": "REQ-007",
+          "pickup": [17, 7],
+          "destination": [3, 10],
+          "deadline_ticks": 85,
+          "package_weight": 2.0
+        },
+        {
+          "id": "REQ-008",
+          "pickup": [11, 14],
+          "destination": [5, 2],
+          "deadline_ticks": 70,
+          "package_weight": 0.8
+        },
+        {
+          "id": "REQ-009",
+          "pickup": [16, 1],
+          "destination": [1, 18],
+          "deadline_ticks": 120,
+          "package_weight": 3.5
+        },
+        {
+          "id": "REQ-010",
+          "pickup": [4, 17],
+          "destination": [18, 5],
+          "deadline_ticks": 100,
+          "package_weight": 1.8
+        }
+      ],
+      "weather_override": {
+        "initial_weather": "Storm",
+        "change_interval_ticks": 5,
+        "storm_cells_count": 8,
+        "transition_probabilities": {
+          "Clear": { "Clear": 0.30, "Windy": 0.30, "Rain": 0.25, "Storm": 0.15 },
+          "Windy": { "Clear": 0.10, "Windy": 0.35, "Rain": 0.30, "Storm": 0.25 },
+          "Rain":  { "Clear": 0.05, "Windy": 0.15, "Rain": 0.45, "Storm": 0.35 },
+          "Storm": { "Clear": 0.05, "Windy": 0.20, "Rain": 0.35, "Storm": 0.40 }
+        }
+      }
+    },
     "default": {
       "description": "Standard scenario with moderate weather transitions and balanced requests",
       "num_drones": 3,
-      "weather_initial": "Clear"
-    },
-    "stormy_rush": {
-      "description": "High storm frequency with tight delivery deadlines testing replanning",
-      "num_drones": 4,
-      "weather_initial": "Windy"
-    },
-    "dense_fleet": {
-      "description": "Stress testing multi-agent coordination with expanded drone fleet",
-      "num_drones": 6,
-      "weather_initial": "Clear"
+      "max_ticks": 100
     }
   }
 }

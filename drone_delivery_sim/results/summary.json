@@ -1,0 +1,107 @@
+{
+  "scenario_summary": {
+    "total_requests": 10,
+    "deliveries_completed": 2,
+    "deliveries_on_time": 2,
+    "deliveries_failed_or_expired": 2,
+    "completion_rate_pct": 20.0,
+    "on_time_rate_pct": 100.0
+  },
+  "fleet": {
+    "fleet_size": 8,
+    "avg_utilisation_pct": 13.4,
+    "total_distance_moved": 208.0,
+    "total_battery_consumed": 709.5,
+    "avg_distance_per_drone": 26.0,
+    "avg_battery_per_drone": 88.69
+  },
+  "safety": {
+    "collisions": 0,
+    "conflicts_resolved": 678
+  },
+  "intelligence": {
+    "total_replans": 6
+  },
+  "per_drone": {
+    "DRONE-01": {
+      "deliveries_completed": 0,
+      "deliveries_on_time": 0,
+      "distance_moved": 19.0,
+      "battery_consumed": 100.0,
+      "replans_triggered": 3,
+      "charge_detours": 0,
+      "utilisation_pct": 9.5,
+      "hovering_ticks": 181
+    },
+    "DRONE-02": {
+      "deliveries_completed": 0,
+      "deliveries_on_time": 0,
+      "distance_moved": 25.0,
+      "battery_consumed": 100.0,
+      "replans_triggered": 0,
+      "charge_detours": 1,
+      "utilisation_pct": 13.0,
+      "hovering_ticks": 173
+    },
+    "DRONE-03": {
+      "deliveries_completed": 0,
+      "deliveries_on_time": 0,
+      "distance_moved": 38.0,
+      "battery_consumed": 100.0,
+      "replans_triggered": 1,
+      "charge_detours": 1,
+      "utilisation_pct": 19.5,
+      "hovering_ticks": 161
+    },
+    "DRONE-04": {
+      "deliveries_completed": 1,
+      "deliveries_on_time": 1,
+      "distance_moved": 36.0,
+      "battery_consumed": 67.0,
+      "replans_triggered": 1,
+      "charge_detours": 0,
+      "utilisation_pct": 18.5,
+      "hovering_ticks": 162
+    },
+    "DRONE-05": {
+      "deliveries_completed": 0,
+      "deliveries_on_time": 0,
+      "distance_moved": 20.0,
+      "battery_consumed": 100.0,
+      "replans_triggered": 0,
+      "charge_detours": 1,
+      "utilisation_pct": 10.5,
+      "hovering_ticks": 179
+    },
+    "DRONE-06": {
+      "deliveries_completed": 0,
+      "deliveries_on_time": 0,
+      "distance_moved": 19.0,
+      "battery_consumed": 100.0,
+      "replans_triggered": 0,
+      "charge_detours": 1,
+      "utilisation_pct": 10.0,
+      "hovering_ticks": 179
+    },
+    "DRONE-07": {
+      "deliveries_completed": 1,
+      "deliveries_on_time": 1,
+      "distance_moved": 23.0,
+      "battery_consumed": 42.5,
+      "replans_triggered": 0,
+      "charge_detours": 0,
+      "utilisation_pct": 12.0,
+      "hovering_ticks": 175
+    },
+    "DRONE-08": {
+      "deliveries_completed": 0,
+      "deliveries_on_time": 0,
+      "distance_moved": 28.0,
+      "battery_consumed": 100.0,
+      "replans_triggered": 1,
+      "charge_detours": 1,
+      "utilisation_pct": 14.5,
+      "hovering_ticks": 171
+    }
+  }
+}

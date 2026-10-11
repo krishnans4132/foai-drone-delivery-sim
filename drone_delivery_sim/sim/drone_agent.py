@@ -488,8 +488,10 @@ class DroneAgent:
                 self.state = DroneState.CHARGING
                 return DroneAction.CHARGE
 
-            self.check_and_replan_if_needed(self.active_charger_target, env, weather_str)
-            return self._follow_path_or_hover(env, weather_str)
+            self.check_and_replan_if_needed(
+                self.active_charger_target, env, weather_str, blocked_cells=blocked_cells
+            )
+            return self._follow_path_or_hover(env, weather_str, blocked_cells=blocked_cells)
 
         # ---------------------------------------------------------------------
         # State: IDLE
@@ -497,9 +499,11 @@ class DroneAgent:
         if self.state == DroneState.IDLE:
             if self.assigned_task and self.assigned_task.status != "DELIVERED":
                 self.state = DroneState.GOING_TO_PICKUP
-                self.plan_path_to(self.assigned_task.pickup, env, weather_str)
+                self.plan_path_to(
+                    self.assigned_task.pickup, env, weather_str, blocked_cells=blocked_cells
+                )
             elif self.current_path:
-                return self._follow_path_or_hover(env, weather_str)
+                return self._follow_path_or_hover(env, weather_str, blocked_cells=blocked_cells)
             else:
                 return self._hover_action(env, weather_str)
 
@@ -516,11 +520,15 @@ class DroneAgent:
                 self.has_package = True
                 self.assigned_task.status = "IN_TRANSIT"
                 self.state = DroneState.DELIVERING
-                self.plan_path_to(self.assigned_task.destination, env, weather_str)
+                self.plan_path_to(
+                    self.assigned_task.destination, env, weather_str, blocked_cells=blocked_cells
+                )
                 return DroneAction.PICKUP
 
-            self.check_and_replan_if_needed(self.assigned_task.pickup, env, weather_str)
-            return self._follow_path_or_hover(env, weather_str)
+            self.check_and_replan_if_needed(
+                self.assigned_task.pickup, env, weather_str, blocked_cells=blocked_cells
+            )
+            return self._follow_path_or_hover(env, weather_str, blocked_cells=blocked_cells)
 
         # ---------------------------------------------------------------------
         # State: DELIVERING
@@ -539,8 +547,10 @@ class DroneAgent:
                 self.state = DroneState.DONE
                 return DroneAction.DELIVER
 
-            self.check_and_replan_if_needed(self.assigned_task.destination, env, weather_str)
-            return self._follow_path_or_hover(env, weather_str)
+            self.check_and_replan_if_needed(
+                self.assigned_task.destination, env, weather_str, blocked_cells=blocked_cells
+            )
+            return self._follow_path_or_hover(env, weather_str, blocked_cells=blocked_cells)
 
         # ---------------------------------------------------------------------
         # State: DONE / HOVERING
@@ -553,15 +563,27 @@ class DroneAgent:
     # -------------------------------------------------------------------------
     # Internal Movement & Hover Actuators
     # -------------------------------------------------------------------------
-    def _follow_path_or_hover(self, env: Any, weather_str: str) -> DroneAction:
-        """Step along the active planned route or hover if path is exhausted/blocked."""
+    def _follow_path_or_hover(
+        self,
+        env: Any,
+        weather_str: str,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
+    ) -> DroneAction:
+        """Step along the active planned route or hover if path is exhausted/blocked.
+
+        Args:
+            blocked_cells: Additional cells to treat as impassable for this tick
+                           (e.g. cells reserved by higher-priority drones).
+        """
         if not self.current_path:
             return self._hover_action(env, weather_str)
 
         next_pos = self.current_path[0]
 
-        if not env.is_traversable(next_pos, weather=weather_str):
-            # Target next cell blocked; cannot step, must hover and wait for replan
+        # Treat as blocked if either environmentally impassable or reserved this tick
+        reserved_this_tick = blocked_cells if blocked_cells is not None else set()
+        if not env.is_traversable(next_pos, weather=weather_str) or next_pos in reserved_this_tick:
+            # Target next cell blocked; hover and wait for replan next tick
             return self._hover_action(env, weather_str)
 
         # Pop cell and move
