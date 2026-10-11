@@ -35,14 +35,12 @@ class Simulation:
         self.seed = config.get("seed", 42)
         self.rng = random.Random(self.seed)
 
-        grid_cfg = config.get("grid", {})
-        env_cfg = config.get("environment", {})
-        self.env = GridEnvironment(
-            width=grid_cfg.get("width", 20),
-            height=grid_cfg.get("height", 20),
-            obstacles=[tuple(p) for p in env_cfg.get("obstacles", [])],
-            restricted_zones=[tuple(p) for p in env_cfg.get("restricted_zones", [])],
-            charging_stations=[tuple(p) for p in env_cfg.get("charging_stations", [])],
+        fleet_cfg = config.get("fleet", {})
+        target_drones = drone_override if drone_override is not None else fleet_cfg.get("num_drones", 3)
+        self.env = GridEnvironment.from_config(
+            config,
+            requested_drones=target_drones,
+            auto_generate_starts=True
         )
 
         weather_cfg = config.get("weather", {})
@@ -60,16 +58,12 @@ class Simulation:
         self.current_tick = 0
         self.drones: Dict[str, DroneAgent] = {}
 
-        # Determine target fleet size
-        fleet_cfg = config.get("fleet", {})
-        target_drones = drone_override if drone_override is not None else fleet_cfg.get("num_drones", 3)
         self._initialize_fleet(target_drones)
 
     def _get_available_start_positions(self) -> List[Tuple[int, int]]:
         """Return free candidate starting or charging cells not currently occupied by drones."""
-        fleet_cfg = self.config.get("fleet", {})
-        candidates = [tuple(p) for p in fleet_cfg.get("start_locations", [])]
-        for cs in self.env.charging_stations:
+        candidates = list(self.env.start_locations)
+        for cs in sorted(self.env.charging_stations):
             if cs not in candidates:
                 candidates.append(cs)
 
@@ -94,20 +88,7 @@ class Simulation:
 
     def validate_drone_count(self, requested_count: int) -> Tuple[bool, str]:
         """Validate if requested drone count can fit into the grid and start locations."""
-        if requested_count < 1:
-            return False, f"Invalid fleet size ({requested_count}). Must be at least 1 drone."
-
-        # Maximum capacity corresponds to unique start points + charging stations
-        fleet_cfg = self.config.get("fleet", {})
-        starts = set(tuple(p) for p in fleet_cfg.get("start_locations", []))
-        total_slots = len(starts | self.env.charging_stations)
-
-        if requested_count > total_slots:
-            return False, (
-                f"Requested {requested_count} drones exceeds available start/charging cells "
-                f"({total_slots}). Maximum possible fleet for this grid layout is {total_slots}."
-            )
-        return True, "Valid drone count."
+        return self.env.validate_drone_capacity(requested_count)
 
     def add_drone(self) -> bool:
         """Dynamically add one drone to the running simulation.

@@ -111,9 +111,7 @@ When a significant change is detected (for example, rain or a storm makes the se
 
 ---
 
-## Architecture & Project Scaffold Status (Updated Step 1)
-- **Directory Layout**: `drone_delivery_sim/` created containing `sim/`, `ui/`, `tests/`, `results/`.
-- **Config & Presets**: [config.json](file:///Users/krishnansirosh/Desktop/sem%207/foai/case%20study/drone_delivery_sim/config.json) specifies 20x20 grid, dynamic fleet parameters, obstacles, charging stations, delivery requests, weather transition matrix, battery limits, and scenario presets (`default`, `stormy_rush`, `dense_fleet`).
-- **CLI Flags**: `--drones N`, `--scenario NAME`, `--config PATH`, `--headless`, `--ticks T`, `--seed S`.
-- **Decoupling**: Core simulation engine in `sim/` is isolated from Pygame `ui/renderer.py`.
-- **Test Suite**: Verified via `pytest tests/` (5 passing tests).
+## Implementation Status
+- **Step 0**: Specification established, KI initialized, ground rules codified.
+- **Step 1**: Architecture planned, master task list, full directory scaffold, CLI argument parsing, config.json created, pushed to GitHub.
+- **Step 2**: Grid graph environment implemented in `sim/environment.py`. Cardinal graph neighbors, obstacle/restricted/blocked cell rules, per-cell move costs with weather multipliers, config loading, dynamic fleet capacity validation & start cell auto-generation, nearest charging station helper. Verified with unit tests.
