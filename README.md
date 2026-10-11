@@ -1,9 +1,5 @@
-# Case Study: Simulated Drone Delivery System
+# Simulated Drone Delivery System
 
-## Course Information
-- **Course**: Foundations of Artificial Intelligence
-- **Course Code**: 23CSE401
-- **Academic Year**: 2026–2027
 
 ## Team Members
 - **CB.SC.U4CSE23603** - ADWAITH RAVEENDRAN
