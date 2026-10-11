@@ -296,6 +296,7 @@ class DroneAgent:
         self,
         env: Any,
         current_weather: str,
+        blocked_cells: Optional[Set[Tuple[int, int]]] = None,
     ) -> Tuple[bool, str]:
         """Step 2: Check whether the current route is still suitable.
 
@@ -310,8 +311,14 @@ class DroneAgent:
 
         # Check traversability of all remaining waypoints
         for cell in self.current_path:
-            if not env.is_traversable(cell, weather=current_weather):
-                reason = f"Remaining waypoint {cell} is blocked or restricted under {current_weather}"
+            if not env.is_traversable(
+                cell, weather=current_weather, blocked_cells=blocked_cells
+            ):
+                reason = (
+                    f"Remaining waypoint {cell} is reserved by another drone"
+                    if blocked_cells and cell in blocked_cells
+                    else f"Remaining waypoint {cell} is blocked or restricted under {current_weather}"
+                )
                 self._log_replan_event("STEP_2_CHECK_SUITABILITY", {"is_suitable": False, "reason": reason})
                 return False, reason
 
@@ -400,7 +407,9 @@ class DroneAgent:
         (4) continue with the new route.
         """
         self.detect_environmental_change(env, current_weather)
-        is_suitable, _ = self.check_route_suitability(env, current_weather)
+        is_suitable, _ = self.check_route_suitability(
+            env, current_weather, blocked_cells=blocked_cells
+        )
 
         if not is_suitable:
             success = self.recompute_route_astar(target, env, current_weather, blocked_cells=blocked_cells)
@@ -473,6 +482,19 @@ class DroneAgent:
         active_target = perception.destination
         if self.should_divert_for_charge(active_target, weather_str, env):
             nearest_cs = env.get_nearest_charging_station(self.position, weather=weather_str)
+            if blocked_cells:
+                available_chargers = [
+                    station for station in env.charging_stations
+                    if station not in blocked_cells
+                    and env.is_traversable(station, weather=weather_str)
+                ]
+                if available_chargers:
+                    nearest_cs = min(
+                        available_chargers,
+                        key=lambda station: (
+                            manhattan_distance(self.position, station), station
+                        ),
+                    )
             if nearest_cs is not None:
                 self.resume_state = self.state
                 self.resume_target = active_target

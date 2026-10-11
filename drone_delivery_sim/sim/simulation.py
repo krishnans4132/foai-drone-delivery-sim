@@ -135,6 +135,12 @@ class Simulation:
 
     def _get_available_start_positions(self) -> List[Tuple[int, int]]:
         """Return free candidate start/charging cells not occupied by any drone."""
+        # Expand launch cells the same way initial configuration validation
+        # does, so live additions can use remaining free grid / charger cells.
+        try:
+            self.env.ensure_start_locations(len(self.drones) + 1, auto_generate=True)
+        except ValueError:
+            return []
         candidates = list(self.env.start_locations)
         for cs in sorted(self.env.charging_stations):
             if cs not in candidates:
@@ -318,7 +324,10 @@ class Simulation:
         # reserved_cells only when it moves away — preventing any other drone
         # from entering a cell that an occupying drone might end up keeping.
         # (Static drones always keep their cell; active drones may release theirs.)
-        static_states = (DroneState.DONE, DroneState.IDLE, DroneState.CHARGING)
+        # CHARGING drones must reach DroneAgent.step() so their battery can
+        # increase. They remain stationary through their intended position;
+        # treating them as hover-only here bypasses the charging action.
+        static_states = (DroneState.DONE, DroneState.IDLE)
         for drone in drone_list:
             reserved_cells[drone.position] = drone.drone_id
             if drone.state in static_states:
@@ -330,6 +339,37 @@ class Simulation:
             if drone.state in static_states:
                 continue
 
+            curr_pos = drone.position
+            if drone.state == DroneState.GOING_TO_CHARGE and drone.active_charger_target:
+                reserved_chargers = {
+                    other.active_charger_target
+                    for other in drone_list
+                    if other.drone_id != drone.drone_id
+                    and other.state in (DroneState.GOING_TO_CHARGE, DroneState.CHARGING)
+                    and other.active_charger_target is not None
+                }
+                unavailable = set(reserved_cells) | reserved_chargers
+                unavailable.discard(curr_pos)
+                if drone.active_charger_target in unavailable:
+                    free_chargers = [
+                        station for station in self.env.charging_stations
+                        if station not in unavailable
+                        and self.env.is_traversable(station, weather=weather_val)
+                    ]
+                    if free_chargers:
+                        drone.active_charger_target = min(
+                            free_chargers,
+                            key=lambda station: (
+                                abs(station[0] - curr_pos[0]) + abs(station[1] - curr_pos[1]),
+                                station,
+                            ),
+                        )
+                        drone.current_path = []
+                        drone.plan_path_to(
+                            drone.active_charger_target, self.env, weather_val,
+                            blocked_cells=unavailable,
+                        )
+
             # Pre-plan path for newly assigned drones (empty path) so that
             # get_intended_next_position() returns the correct first step
             # during conflict resolution rather than the current position.
@@ -340,7 +380,6 @@ class Simulation:
             elif drone.state == DroneState.GOING_TO_CHARGE and not drone.current_path and drone.active_charger_target:
                 drone.plan_path_to(drone.active_charger_target, self.env, weather_val)
 
-            curr_pos = drone.position
             perception = drone.perceive(self.env, weather_val)
             target = perception.destination
 
@@ -378,6 +417,9 @@ class Simulation:
             if conflict and intended_pos != curr_pos and target is not None:
                 # Try dynamic replan avoiding the reserved cells
                 blocked_avoidance = set(reserved_cells.keys()) | {intended_pos}
+                # The drone's occupied cell is already reserved for collision
+                # checks, but it must remain a traversable A* start node.
+                blocked_avoidance.discard(curr_pos)
                 replan_ok = drone.handle_dynamic_replanning(
                     target, self.env, weather_val, blocked_cells=blocked_avoidance
                 )
@@ -441,6 +483,13 @@ class Simulation:
                     cell for cell, owner in reserved_cells.items()
                     if owner != did and (approved_pos is None or cell != approved_pos)
                 }
+                other_reserved.update(
+                    other.active_charger_target
+                    for other in drone_list
+                    if other.drone_id != did
+                    and other.state in (DroneState.GOING_TO_CHARGE, DroneState.CHARGING)
+                    and other.active_charger_target is not None
+                )
                 action = drone.step(
                     self.env, weather_val,
                     override_action=None,
@@ -478,6 +527,16 @@ class Simulation:
             if new_completed > prev_completed:
                 completed_task = drone.completed_tasks[-1]
                 req_id = getattr(completed_task, "id", "??")
+                completed_task.status = "DELIVERED"
+                self.delivery_manager.assigned_requests = [
+                    request for request in self.delivery_manager.assigned_requests
+                    if request.id != req_id
+                ]
+                if not any(
+                    request.id == req_id
+                    for request in self.delivery_manager.completed_requests
+                ):
+                    self.delivery_manager.completed_requests.append(completed_task)
                 deadline = self.metrics._request_deadlines.get(req_id, 9999)
                 on_time = tick <= deadline
                 self.metrics.record_delivery(did, req_id, tick, success=True)

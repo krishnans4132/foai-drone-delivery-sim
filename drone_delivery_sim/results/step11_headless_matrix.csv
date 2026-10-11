@@ -1,0 +1,37 @@
+scenario,seed,fleet_size,ticks,total_requests,completed,on_time,expired,pending,in_progress,collisions,replans,not_completed
+simple_clear,11,1,120,5,1,1,4,0,0,0,0,"{'REQ-001': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-004': 'expired'}"
+simple_clear,11,3,120,5,3,3,2,0,0,0,4,"{'REQ-005': 'expired', 'REQ-004': 'expired'}"
+simple_clear,11,6,120,5,5,5,0,0,0,0,28,{}
+simple_clear,11,10,120,5,5,5,0,0,0,0,17,{}
+simple_clear,42,1,120,5,1,1,4,0,0,0,0,"{'REQ-001': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-004': 'expired'}"
+simple_clear,42,3,120,5,3,3,2,0,0,0,4,"{'REQ-005': 'expired', 'REQ-004': 'expired'}"
+simple_clear,42,6,120,5,5,5,0,0,0,0,28,{}
+simple_clear,42,10,120,5,5,5,0,0,0,0,17,{}
+simple_clear,2026,1,120,5,1,1,4,0,0,0,0,"{'REQ-001': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-004': 'expired'}"
+simple_clear,2026,3,120,5,3,3,2,0,0,0,4,"{'REQ-005': 'expired', 'REQ-004': 'expired'}"
+simple_clear,2026,6,120,5,5,5,0,0,0,0,28,{}
+simple_clear,2026,10,120,5,5,5,0,0,0,0,17,{}
+busy_city,11,1,150,8,1,1,7,0,0,0,0,"{'REQ-001': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-004': 'expired', 'REQ-008': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,11,3,150,8,3,3,5,0,0,0,4,"{'REQ-005': 'expired', 'REQ-004': 'expired', 'REQ-008': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,11,6,150,8,6,6,2,0,0,0,42,"{'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,11,10,150,8,8,8,0,0,0,0,56,{}
+busy_city,42,1,150,8,1,1,7,0,0,0,0,"{'REQ-001': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-004': 'expired', 'REQ-008': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,42,3,150,8,3,3,5,0,0,0,4,"{'REQ-005': 'expired', 'REQ-004': 'expired', 'REQ-008': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,42,6,150,8,6,6,2,0,0,0,42,"{'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,42,10,150,8,8,8,0,0,0,0,56,{}
+busy_city,2026,1,150,8,1,1,7,0,0,0,0,"{'REQ-001': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-004': 'expired', 'REQ-008': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,2026,3,150,8,3,3,5,0,0,0,4,"{'REQ-005': 'expired', 'REQ-004': 'expired', 'REQ-008': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,2026,6,150,8,6,6,2,0,0,0,42,"{'REQ-006': 'expired', 'REQ-007': 'expired'}"
+busy_city,2026,10,150,8,8,8,0,0,0,0,56,{}
+storm_stress,11,1,200,10,1,1,9,0,0,0,1,"{'REQ-001': 'expired', 'REQ-008': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,11,3,200,10,3,2,7,0,0,0,5,"{'REQ-008': 'expired', 'REQ-005': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,11,6,200,10,5,3,5,0,0,0,24,"{'REQ-008': 'expired', 'REQ-005': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,11,10,200,10,7,4,3,0,0,0,36,"{'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,42,1,200,10,1,1,9,0,0,0,0,"{'REQ-001': 'expired', 'REQ-008': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,42,3,200,10,3,3,7,0,0,0,7,"{'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,42,6,200,10,6,4,4,0,0,0,46,"{'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,42,10,200,10,10,8,0,0,0,0,89,{}
+storm_stress,2026,1,200,10,1,1,9,0,0,0,0,"{'REQ-001': 'expired', 'REQ-008': 'expired', 'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,2026,3,200,10,3,2,7,0,0,0,10,"{'REQ-002': 'expired', 'REQ-005': 'expired', 'REQ-006': 'expired', 'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,2026,6,200,10,6,6,4,0,0,0,27,"{'REQ-007': 'expired', 'REQ-004': 'expired', 'REQ-010': 'expired', 'REQ-009': 'expired'}"
+storm_stress,2026,10,200,10,10,8,0,0,0,0,79,{}
