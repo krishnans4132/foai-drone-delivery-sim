@@ -1,0 +1,184 @@
+               Case Study: Simulated Drone Delivery System
+
+
+
+                                Course Code: 23CSE401
+                       Course: Foundations of Artificial Intelligence
+                              Academic Year: 2026–2027
+
+
+
+1    Team Information
+                             Reg. No.                         Name
+                        CB.SC.U4CSE23603                    ADWAITH
+                                                          RAVEENDRAN
+                        CB.SC.U4CSE23628                   KRISHNAN S
+                        CB.SC.U4CSE23661                MADHAV SREEJITH
+
+
+2    Introduction
+A simulated drone delivery system is an Artificial Intelligence (AI) application in which autonomous
+drones transport packages from source locations to specified destinations. The system operates within
+a simulated environment containing delivery locations, obstacles, restricted areas, charging stations,
+and changing environmental conditions.
+The proposed system is designed as a multi-agent environment in which multiple autonomous Drone
+Agents operate simultaneously. A Delivery Manager Agent assigns delivery requests to suitable
+drones, while a Weather Agent introduces changing environmental conditions that can affect naviga-
+tion. Each Drone Agent perceives its surroundings, plans a route, monitors its battery, avoids obstacles,
+and delivers its assigned package.
+The delivery problem is modeled as a state-space search problem. Each drone selects an efficient route
+while considering distance, battery usage, obstacles, and environmental conditions. A* Search is used
+for route planning, and dynamic replanning allows drones to respond when the environment changes.
+
+
+3    PEAS Formulation
+PEAS stands for Performance Measure, Environment, Actuators, and Sensors. It provides a struc-
+tured description of the task environment in which the intelligent agents operate, including their objec-
+tives, surroundings, available actions, and the information they receive through their sensors. For the
+simulated drone delivery system, PEAS defines how the Drone Agents perceive and interact with the
+delivery environment.
+
+
+
+
+                                                   1
+ Component            Description
+ Performance          Successful and timely package delivery, minimum travel distance, efficient battery us-
+ Measure              age, collision avoidance, safe navigation, and effective use of available drones.
+ Environment          A simulated grid-based delivery area containing drone starting locations, delivery lo-
+                      cations, packages, obstacles, restricted cells, charging stations, and changing weather
+                      conditions.
+ Actuators            Movement actions such as moving up, down, left, right, hovering, picking up packages,
+                      delivering packages, and returning to a charging station.
+ Sensors              Position, destination, obstacle detection, battery level, package status, and current
+                      weather information.
+
+
+4    Environment & Agent Analysis
+4.1 Environment Characteristics
+
+The simulated drone delivery environment has the following characteristics:
+• Partially Observable: A drone may not have complete information about future environmental
+  changes and relies on available map and sensor information.
+• Dynamic: Weather conditions, drone positions, and available routes can change during execution.
+• Sequential: Each movement affects the drone’s subsequent position, battery level, and remaining
+  route.
+• Stochastic: Environmental conditions such as weather can change during the simulation.
+• Discrete: The delivery area is represented as a grid in which each cell represents a possible drone
+  location.
+• Multi-Agent: Multiple autonomous Drone Agents operate in the same environment and receive
+  different delivery tasks.
+• Known: The basic map and movement rules are known, while dynamic conditions such as weather
+  can change.
+
+4.2 Agents in the System
+
+The system contains three types of autonomous software agents.
+
+1. Drone Agent
+
+The Drone Agent is the primary agent responsible for executing deliveries. It navigates to the assigned
+package, picks it up, plans a route to the destination, avoids obstacles, monitors its battery, and delivers
+the package.
+If the battery becomes low, the drone can travel to a charging station before continuing its delivery. If
+the environment changes, the drone can calculate a new route.
+
+2. Delivery Manager Agent
+
+The Delivery Manager Agent coordinates delivery requests and assigns packages to available drones.
+The assignment considers factors such as distance to the package, battery level, workload, and drone
+availability.
+
+                                                     2
+The manager performs task allocation but does not directly control the movement of the drones.
+
+3. Weather Agent
+
+The Weather Agent models changing environmental conditions.
+
+                           Weather                     Effect
+                            Clear              Normal movement cost
+                            Windy         Increased movement/energy cost
+                             Rain     Higher movement cost and restricted cells
+                            Storm     Selected routes may become unavailable
+
+The Weather Agent changes environmental conditions that are perceived by the Drone Agents.
+Battery is not a separate agent. It is an internal state variable of the Drone Agent. Packages, obsta-
+cles, and charging stations are environmental entities.
+
+
+5    Algorithmic Modeling & Search Strategy
+5.1 State-Space Formulation
+
+The drone delivery problem is formulated as a state-space search problem:
+• Initial State: A drone is positioned at its starting location with an assigned delivery task.
+• Actions: Move to an adjacent grid cell, pick up a package, deliver a package, or move towards a
+  charging station.
+• Transition Model: An action changes the drone’s position, battery level, package status, and route.
+• Goal Test: The package is successfully delivered to its assigned destination.
+• Path Cost: The cost is primarily based on travel distance, with additional penalties for environmental
+  conditions when required.
+The environment is represented as a graph where valid grid cells are nodes and movement between
+adjacent cells represents an edge.
+
+5.2 A* Search for Route Planning
+
+Each Drone Agent uses A* Search to find an efficient route from its current position to the destination.
+The evaluation function is:
+
+                                           f (n) = g(n) + h(n)
+where g(n) is the cost from the starting node to node n, and h(n) is the estimated cost from node n to
+the destination.
+For the grid-based environment, Manhattan distance is used as the heuristic:
+
+                                       h(n) = |xn − xg | + |yn − yg |
+where (xn , yn ) represents the current position and (xg , yg ) represents the destination.
+A* is selected because it considers both the cost already incurred and the estimated remaining cost. It
+can therefore find an efficient path while avoiding obstacles and restricted cells.
+
+                                                     3
+5.3 Task Allocation
+
+The Delivery Manager Agent assigns delivery requests to available drones.
+For each delivery request, the manager considers:
+• Distance to the package.
+• Current battery level.
+• Current workload.
+• Drone availability.
+The drone with the most suitable overall conditions is assigned the delivery. This allows multiple
+drones to share the delivery workload.
+
+5.4 Dynamic Replanning
+
+The environment can change while a drone is travelling. For example, rain or a storm may make a
+previously selected route unavailable or more costly.
+When a significant environmental change is detected, the Drone Agent:
+1. Detects the change.
+2. Checks whether the current route is still suitable.
+3. Runs A* again if necessary.
+4. Continues the delivery using the new route.
+This allows the system to adapt to dynamic conditions rather than following a fixed route.
+
+5.5 Search Strategy Selection
+
+Several search algorithms can be considered for the drone routing problem. Breadth-First Search
+(BFS) can find a shortest path when all movements have equal cost, but it does not consider the es-
+timated distance to the destination. Depth-First Search (DFS) may find a path quickly but does not
+guarantee an optimal solution. Uniform Cost Search (UCS) handles different path costs, but it does
+not use heuristic information to guide the search toward the destination.
+A* Search is selected as the primary search strategy because it combines the actual path cost with
+a heuristic estimate of the remaining distance. This allows the drone to efficiently explore promising
+routes while avoiding obstacles and restricted cells. The Manhattan distance heuristic is particularly
+suitable for the proposed grid-based environment.
+A* can also be executed again when the environment changes. Therefore, if weather conditions make
+the current route unavailable or more costly, the Drone Agent can perform route replanning from its
+current position.
+The Delivery Manager Agent performs task allocation, while the Weather Agent introduces environ-
+mental changes. The Drone Agents use A* for navigation and replanning, allowing the multi-agent
+system to coordinate delivery tasks while adapting to changes in the environment.
+
+
+
+
+                                                    4
+

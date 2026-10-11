@@ -1,0 +1,117 @@
+{
+  "project": "FOAI Drone Delivery Case Study",
+  "version": "1.0.0",
+  "seed": 42,
+  "grid": {
+    "width": 20,
+    "height": 20
+  },
+  "fleet": {
+    "num_drones": 3,
+    "battery_capacity": 100.0,
+    "low_battery_threshold": 25.0,
+    "charge_rate_per_tick": 15.0,
+    "move_energy_cost": 1.0,
+    "hover_energy_cost": 0.5,
+    "replan_cost_threshold": 1.5,
+    "start_locations": [
+      [0, 0],
+      [0, 1],
+      [1, 0],
+      [0, 2],
+      [2, 0],
+      [1, 1],
+      [0, 3],
+      [3, 0]
+    ]
+  },
+  "environment": {
+    "obstacles": [
+      [5, 5], [5, 6], [5, 7], [5, 8],
+      [10, 10], [10, 11], [10, 12], [11, 10], [12, 10],
+      [14, 3], [14, 4], [14, 5],
+      [8, 15], [8, 16], [9, 15], [9, 16]
+    ],
+    "restricted_zones": [
+      [3, 12], [3, 13], [4, 12], [4, 13],
+      [15, 14], [15, 15], [16, 14], [16, 15]
+    ],
+    "charging_stations": [
+      [0, 0],
+      [0, 19],
+      [19, 0],
+      [19, 19],
+      [9, 9],
+      [10, 9]
+    ]
+  },
+  "weather": {
+    "initial_weather": "Clear",
+    "transition_probabilities": {
+      "Clear": { "Clear": 0.70, "Windy": 0.20, "Rain": 0.08, "Storm": 0.02 },
+      "Windy": { "Clear": 0.30, "Windy": 0.50, "Rain": 0.15, "Storm": 0.05 },
+      "Rain":  { "Clear": 0.15, "Windy": 0.25, "Rain": 0.50, "Storm": 0.10 },
+      "Storm": { "Clear": 0.10, "Windy": 0.30, "Rain": 0.40, "Storm": 0.20 }
+    },
+    "cost_multipliers": {
+      "Clear": 1.0,
+      "Windy": 1.5,
+      "Rain": 2.0,
+      "Storm": 3.0
+    }
+  },
+  "delivery_requests": [
+    {
+      "id": "REQ-001",
+      "pickup": [2, 5],
+      "destination": [18, 18],
+      "deadline_ticks": 60,
+      "package_weight": 2.5
+    },
+    {
+      "id": "REQ-002",
+      "pickup": [12, 2],
+      "destination": [2, 16],
+      "deadline_ticks": 75,
+      "package_weight": 1.0
+    },
+    {
+      "id": "REQ-003",
+      "pickup": [7, 8],
+      "destination": [16, 6],
+      "deadline_ticks": 50,
+      "package_weight": 3.0
+    },
+    {
+      "id": "REQ-004",
+      "pickup": [15, 12],
+      "destination": [4, 4],
+      "deadline_ticks": 90,
+      "package_weight": 1.5
+    },
+    {
+      "id": "REQ-005",
+      "pickup": [1, 15],
+      "destination": [17, 3],
+      "deadline_ticks": 80,
+      "package_weight": 2.0
+    }
+  ],
+  "scenarios": {
+    "default": {
+      "description": "Standard scenario with moderate weather transitions and balanced requests",
+      "num_drones": 3,
+      "weather_initial": "Clear"
+    },
+    "stormy_rush": {
+      "description": "High storm frequency with tight delivery deadlines testing replanning",
+      "num_drones": 4,
+      "weather_initial": "Windy"
+    },
+    "dense_fleet": {
+      "description": "Stress testing multi-agent coordination with expanded drone fleet",
+      "num_drones": 6,
+      "weather_initial": "Clear"
+    }
+  }
+}
