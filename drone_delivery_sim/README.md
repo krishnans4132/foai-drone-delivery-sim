@@ -22,7 +22,12 @@ Python 3.10 or newer is required. Install the dependencies and launch the graphi
 
 ```bash
 pip install -r requirements.txt
+
+# Option A: Launch Pygame Desktop GUI
 python main.py
+
+# Option B: Launch React Web Mission Control Dashboard (http://localhost:5001)
+python main.py --web
 ```
 
 Set a fleet size from the command line (it overrides the scenario/config default):

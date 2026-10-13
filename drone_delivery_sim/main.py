@@ -20,6 +20,19 @@ import json
 import os
 import sys
 from pathlib import Path
+
+# Automatically use the workspace virtual environment so dependencies are always loaded
+for _c in [
+    Path(__file__).resolve().parents[1] / ".venv" / "bin" / "python",
+    Path(__file__).resolve().parent / ".venv" / "bin" / "python",
+]:
+    if _c.exists() and sys.executable != str(_c) and sys.argv and sys.argv[0].endswith(".py"):
+        try:
+            import pygame  # type: ignore
+        except ImportError:
+            os.execv(str(_c), [str(_c)] + sys.argv)
+        break
+
 from sim.simulation import Simulation
 
 
@@ -126,6 +139,14 @@ def parse_args():
             "Run all three preset scenarios headless with multiple fleet sizes "
             "and print a combined summary table. Implies --headless."
         ),
+    )
+    parser.add_argument(
+        "--compact", action="store_true",
+        help="Use compact window size (1480x940) instead of the default large UI (1680x970)",
+    )
+    parser.add_argument(
+        "--web", action="store_true",
+        help="Launch the React web dashboard and REST server (http://localhost:5001)",
     )
     return parser.parse_args()
 
@@ -253,6 +274,19 @@ def main():
     print_banner()
 
     # ------------------------------------------------------------------
+    # --web: execute Flask REST server & serve React dashboard
+    # ------------------------------------------------------------------
+    if args.web:
+        from server import app
+        port = int(os.environ.get("PORT", 5001))
+        print(f"\n==================================================================")
+        print(f"  FOAI Drone Delivery — Web Server & API")
+        print(f"  Serving React Dashboard on: http://localhost:{port}")
+        print(f"==================================================================\n")
+        app.run(host="0.0.0.0", port=port, debug=False)
+        return
+
+    # ------------------------------------------------------------------
     # --run-all: execute all preset scenarios and show combined table
     # ------------------------------------------------------------------
     if args.run_all:
@@ -295,6 +329,7 @@ def main():
         from ui.renderer import UIRenderer
         renderer = UIRenderer(
             sim,
+            compact=args.compact,
             base_config=base_config,
             scenario_name=scenario_name,
             scenario_applier=apply_scenario,

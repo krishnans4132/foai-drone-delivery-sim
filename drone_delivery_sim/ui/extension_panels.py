@@ -73,13 +73,16 @@ class ExtensionPanels:
         ui._draw_text(f"Open {len(v.open_set)}  ·  Closed {len(v.closed_set)}  ·  Query {v.start or '—'} → {v.goal or '—'}", rect.x + 14, rect.y + 31, ui.MUTED, ui.tiny)
         if v.selected_cell:
             vals = v.values(v.selected_cell)
-            ui._draw_text(f"Selected {v.selected_cell}   g={vals['g']:.1f}   h={vals['h']:.1f}   f={vals['f']:.1f}", rect.x + 14, rect.y + 51, ui.TEXT, ui.small)
+            g_str = f"{vals['g']:.1f}" if vals.get("g") is not None else "—"
+            h_str = f"{vals['h']:.1f}" if vals.get("h") is not None else "—"
+            f_str = f"{vals['f']:.1f}" if vals.get("f") is not None else "—"
+            ui._draw_text(f"Selected {v.selected_cell}   g={g_str}   h={h_str}   f={f_str}", rect.x + 14, rect.y + 51, ui.TEXT, ui.small)
         else:
             ui._draw_text("A* expands the lowest f = g + h cell each frame.", rect.x + 14, rect.y + 51, ui.TEXT, ui.small)
         status = "Path found" if v.success else "No path" if v.done else "Searching…" if v.start else "Choose two traversable grid cells"
         ui._draw_text(f"{status}  ·  Path length {len(v.path)}", rect.x + 14, rect.y + 76, (238, 192, 70), ui.tiny)
         label = f"Compare: {self.replay_planner}  ›"
-        button_rect = pygame.Rect(rect.x + 590, rect.y + 43, 144, 28)
+        button_rect = pygame.Rect(rect.x + rect.width - 180, rect.y + 40, 160, 30)
         ui._button("search_compare", label, button_rect)
         if self.replay_result:
             result = self.replay_result
@@ -98,8 +101,8 @@ class ExtensionPanels:
                 break
         clip = pygame.Rect(rect.x + 10, rect.y + 28, rect.width - 20, rect.height - 36)
         ui.screen.set_clip(clip)
-        for idx, line in enumerate(lines[:12]):
-            ui._draw_text(line[:112], rect.x + 14, rect.y + 31 + idx * 19, ui.TEXT if idx else (192, 169, 255), ui.tiny)
+        for idx, line in enumerate(lines[:14]):
+            ui._draw_text(line[:140], rect.x + 14, rect.y + 31 + idx * 19, ui.TEXT if idx else (192, 169, 255), ui.tiny)
         ui.screen.set_clip(None)
 
     def draw_benchmark_panel(self, rect):
@@ -110,7 +113,16 @@ class ExtensionPanels:
         ui._draw_text(ui.benchmark_message, rect.x + 14, rect.y + 31, ui.TEXT, ui.tiny)
         if rows:
             headers = ("DRONES", "DELIVERIES", "ON TIME", "AVG TIME", "DISTANCE", "COLLISIONS", "UTIL")
-            x_positions = (rect.x + 14, rect.x + 105, rect.x + 215, rect.x + 325, rect.x + 440, rect.x + 565, rect.x + 680)
+            w = rect.width
+            x_positions = (
+                rect.x + 14,
+                rect.x + int(w * 0.13),
+                rect.x + int(w * 0.28),
+                rect.x + int(w * 0.43),
+                rect.x + int(w * 0.58),
+                rect.x + int(w * 0.73),
+                rect.x + int(w * 0.87),
+            )
             for x, label in zip(x_positions, headers):
                 ui._draw_text(label, x, rect.y + 58, ui.MUTED, ui.tiny)
             for row_idx, row in enumerate(rows[:6]):
