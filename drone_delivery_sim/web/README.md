@@ -3,7 +3,7 @@
 Autonomous Drone Delivery Fleet Web Interface built with React 19, Vite, and HTML5 Canvas.
 
 ## Overview
-This modern web frontend serves as an interactive alternative and companion to the Pygame UI, providing:
+This React web frontend is the project's interactive dashboard, providing:
 - **Interactive 60fps Grid Canvas**: Real-time visualization of drones, flight paths, breadcrumb trails, charging stations, obstacles, restricted zones, and storm cells.
 - **Mission Telemetry**: Live fleet cards with battery meters, distance tracking, current tasks, and delivery request status.
 - **A* Search Lab**: Click on any two grid cells to run interactive path searches with real-time heuristic value inspection ($f = g + h$), open/closed set visualization, and algorithmic comparison replays against BFS, DFS, and UCS.
@@ -30,7 +30,7 @@ npm run dev
 ```bash
 npm run build
 ```
-The compiled static assets are placed in `dist/` and automatically served by Python's Flask server via `python main.py --web` or `python server.py`.
+The compiled static assets are placed in `dist/` and automatically served by Python's Flask server via `python main.py` or `python server.py`.
 
 ### Linting
 ```bash

@@ -6,7 +6,7 @@
 
 Project: **Case Study: Simulated Drone Delivery System**. Course: Foundations of Artificial Intelligence, **23CSE401**, academic year **2026–2027**. Team: **CB.SC.U4CSE23603 ADWAITH RAVEENDRAN**, **CB.SC.U4CSE23628 KRISHNAN S**, **CB.SC.U4CSE23661 MADHAV SREEJITH**.
 
-Implementation uses Python 3.10+, Pygame for the graphical UI, pytest for tests, and the standard library for core logic. The `sim/` core is UI-independent and headless-capable. Fleet size is editable in configuration, with `--drones N`, and live in the UI. Scenario fleet values are defaults; fleet requests are validated against available locations and capacity. Random behavior uses explicit seedable RNGs. Ambiguities and implementation choices are documented in `ASSUMPTIONS.md`. The Step 10 contribution is additive and must not change baseline simulation behavior.
+Implementation uses Python 3.10+, React/Vite for the web dashboard, Flask for its API, pytest for tests, and the standard library for core logic. The `sim/` core is UI-independent and headless-capable. The web dashboard is the only interactive interface; the former Pygame desktop interface has been removed. Fleet size is editable in configuration and live in the dashboard. Scenario fleet values are defaults; fleet requests are validated against available locations and capacity. Random behavior uses explicit seedable RNGs. Ambiguities and implementation choices are documented in `ASSUMPTIONS.md`.
 
 ## Specification
 
@@ -57,7 +57,7 @@ Battery drains on movement and hover, with weather effects, and recharges at sta
 
 **Step 8 — Simulation, metrics, logs:** tick loop for weather, manager, and drones; headless-capable; runtime `add_drone()`/`remove_drone()` and safe task requeue; total/on-time deliveries, total/per-drone distance, per-drone battery used, collisions, replans, utilization; JSON/CSV summary and detailed event log; three preset scenarios; headless runs with fixed seeds and at least two fleet sizes.
 
-**Step 9 — Pygame UI:** grid, legend, entities and weather; individual drone visuals/status/battery/package/route/trail; PEAS, weather, fleet, queue, metrics, event log panels; play/pause, step, speed, reset, scenario/planner selectors, route toggle, manual weather, random request; live validated add/remove; project/course title and team About/Help; screenshot evidence at 3 and 8 drones.
+**Step 9 — Interactive UI:** the current interface is the React web dashboard in `web/`, backed by the Flask API in `server.py`. The earlier Pygame desktop interface was removed; dashboard functionality is maintained in the web app.
 
 **Step 10 — Additive unique extension:** (1) animated A* visualizer showing open/closed sets and f/g/h plus BFS/DFS/UCS replay; (2) plain-language assignment/replan/charge decision explanation; (3) user-sized fleet scaling script/UI benchmark producing table/chart for delivery count, on-time rate, average delivery time, distance, collisions, and utilization. Extension modules remain separate; tests cover benchmark format and deterministic simulation parity with extensions enabled/disabled.
 
@@ -67,7 +67,7 @@ Battery drains on movement and hover, with weather effects, and recharges at sta
 
 ## Final design
 
-`config.json` is the source for the 20×20 map, fleet defaults, battery values, weather transition matrices, requests, and four scenarios (`default`, `simple_clear`, `busy_city`, `storm_stress`). The CLI loads the chosen preset and allows `--drones N` to override its default. The UI can add/remove drones while running. The core is split into grid/weather/planners/drone/manager/simulation/metrics modules; the renderer consumes the simulation without owning the AI rules. `sim/search_visualizer.py` and `ui/extension_panels.py` isolate the visualizer and decision explainer. `benchmark_fleet.py` creates fresh seeded simulations for each fleet size and exports CSV, JSON, and SVG. The base simulation tick does not call extension search or benchmark logic.
+`config.json` is the source for the 20×20 map, fleet defaults, battery values, weather transition matrices, requests, and four scenarios (`default`, `simple_clear`, `busy_city`, `storm_stress`). The CLI supports headless evaluation; the dashboard can add/remove drones while running. The core is split into grid/weather/planners/drone/manager/simulation/metrics modules; the Flask server and React dashboard present the simulation without owning its AI rules. `sim/search_visualizer.py` contains the visualizer and decision explainer logic. `benchmark_fleet.py` creates fresh seeded simulations for each fleet size and exports CSV, JSON, and SVG. The base simulation tick does not call extension search or benchmark logic.
 
 Simulation runs are deterministic for a fixed seed and configuration. Reservation cells are used as dynamic route blockers; a drone's own current cell is allowed as the A* starting state. Removing an active drone returns its request to the queue. Run caps and request deadlines can expire work; metrics and logs record those expirations explicitly.
 
@@ -77,7 +77,7 @@ Every requirement group from the original project spec and Steps 0–12 is accou
 
 | Spec item | Status | Implementation / evidence |
 |---|---|---|
-| Ground rules: Python/Pygame/pytest, headless core, seeded randomness, assumptions | Done | `requirements.txt`; `sim/`; `main.py`; `ASSUMPTIONS.md`; `config.json` and explicit RNGs in `sim/weather_agent.py`, `sim/simulation.py`. |
+| Ground rules: Python/web dashboard/pytest, headless core, seeded randomness, assumptions | Updated | `requirements.txt`; `web/`; `server.py`; `sim/`; `main.py`; `ASSUMPTIONS.md`; `config.json` and explicit RNGs in `sim/weather_agent.py`, `sim/simulation.py`. |
 | Step 0: scaffold/config/CLI and planning artifacts | Done | `config.json`; `main.py` (`parse_args`, `load_config`, `apply_scenario`); `sim/`, `ui/`, `tests/`, `results/`; `IMPLEMENTATION_PLAN.md`, `TASK_LIST.md`, and `README.md`. `python main.py --help` verified. |
 | Three agents/four weather states/PEAS | Done | `sim/drone_agent.py` (`DroneAgent`); `sim/delivery_manager.py` (`DeliveryManagerAgent`); `sim/weather_agent.py` (`WeatherAgent`, `WeatherType`); README PEAS and characteristics. |
 | Step 1: grid/entities/traversability/config validation/charger lookup | Done | `sim/environment.py` (`GridEnvironment.neighbors`, `is_traversable`, `get_move_cost`, `get_nearest_charging_station`, `from_config`, fleet validation); `tests/`. |
@@ -87,8 +87,8 @@ Every requirement group from the original project spec and Steps 0–12 is accou
 | Step 5: manager allocation and score breakdown, no movement | Done | `sim/delivery_manager.py` (`score_drone_for_request`, `allocate_requests`, assignment history); manager tests in `tests/`. |
 | Step 6: named replanning and collision avoidance | Done | `sim/drone_agent.py` (`detect_environmental_change`, `check_route_suitability`, `recompute_route_astar`, `continue_with_new_route`, `handle_dynamic_replanning`); reservations and tick arbitration in `sim/simulation.py`; regression tests. |
 | Step 8: tick loop, runtime fleet API, metrics, export, scenarios | Done | `sim/simulation.py` (`step`, `add_drone`, `remove_drone`, `run_headless`); `sim/metrics.py` (`MetricsTracker`, `EventLog` and exports); `config.json`; `results/summary.*`, event logs, `results/step11_headless_matrix.*`. |
-| Step 9: UI visuals, panels, controls, help, live fleet | Done | `ui/renderer.py` (`UIRenderer`, `_action`, `_add_drone`, `_remove_drone`, `_draw_grid`, `_draw_dashboard`, `_draw_about`); `results/ui_3_drones.png`, `results/ui_8_drones.png`. |
-| Step 10: visualizer, decision explainer, benchmark and parity | Done | `sim/search_visualizer.py` (`AStarSearchVisualizer`, `DecisionExplainer`); `ui/extension_panels.py`; `benchmark_fleet.py`; `tests/test_step10_extensions.py`; `results/fleet_benchmark.{csv,json,svg}`. |
+| Step 9: UI visuals, panels, controls, help, live fleet | Updated | Current React dashboard in `web/` and Flask API in `server.py`; former Pygame UI removed. Historical screenshots remain under `results/`. |
+| Step 10: visualizer, decision explainer, benchmark and parity | Done | `sim/search_visualizer.py` (`AStarSearchVisualizer`, `DecisionExplainer`); `web/`; `benchmark_fleet.py`; `tests/test_step10_extensions.py`; `results/fleet_benchmark.{csv,json,svg}`. |
 | Step 11: tests, scenario/seed/fleet matrix, zero collisions, screenshots | Done | Latest suite: 59 passed. Matrix: `results/step11_headless_matrix.csv` and `.json`, 36 runs, 0 collisions. Evidence: `results/screenshots/a_normal_routes.png` through `f_live_fleet_change.png`. |
 | Step 12: project guide and final audit | Done | `README.md`; this final spec/KI and traceability audit. |
 

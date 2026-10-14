@@ -21,14 +21,15 @@ import os
 import sys
 from pathlib import Path
 
-# Automatically use the workspace virtual environment so dependencies are always loaded
+# Automatically use the project virtual environment when Flask is unavailable here.
 for _c in [
     Path(__file__).resolve().parents[1] / ".venv" / "bin" / "python",
     Path(__file__).resolve().parent / ".venv" / "bin" / "python",
 ]:
     if _c.exists() and sys.executable != str(_c) and sys.argv and sys.argv[0].endswith(".py"):
         try:
-            import pygame  # type: ignore
+            import flask  # type: ignore
+            import flask_cors  # type: ignore
         except ImportError:
             os.execv(str(_c), [str(_c)] + sys.argv)
         break
@@ -139,14 +140,6 @@ def parse_args():
             "Run all three preset scenarios headless with multiple fleet sizes "
             "and print a combined summary table. Implies --headless."
         ),
-    )
-    parser.add_argument(
-        "--compact", action="store_true",
-        help="Use compact window size (1480x940) instead of the default large UI (1680x970)",
-    )
-    parser.add_argument(
-        "--web", action="store_true",
-        help="Launch the React web dashboard and REST server (http://localhost:5001)",
     )
     return parser.parse_args()
 
@@ -274,9 +267,9 @@ def main():
     print_banner()
 
     # ------------------------------------------------------------------
-    # --web: execute Flask REST server & serve React dashboard
+    # The web dashboard is the only interactive interface.
     # ------------------------------------------------------------------
-    if args.web:
+    if not args.headless and not args.run_all:
         from server import app
         port = int(os.environ.get("PORT", 5001))
         print(f"\n==================================================================")
@@ -315,26 +308,14 @@ def main():
     print(f"  Weather    : {sim.weather_agent.current_weather.value}")
     print(f"  Requests   : {len(sim.delivery_manager.pending_requests)}")
 
-    if args.headless:
-        print(f"\n  Running headless for {max_ticks} ticks...", end="", flush=True)
-        summary = sim.run_headless(
-            max_ticks=max_ticks,
-            scenario_name=scenario_name,
-        )
-        print(" done.")
-        print_summary(summary, scenario_name, len(sim.drones), max_ticks)
-        print(f"\n  Results written to: {os.path.abspath('results/')}")
-    else:
-        print("\n  Starting graphical interface (Pygame)...")
-        from ui.renderer import UIRenderer
-        renderer = UIRenderer(
-            sim,
-            compact=args.compact,
-            base_config=base_config,
-            scenario_name=scenario_name,
-            scenario_applier=apply_scenario,
-        )
-        renderer.run_loop()
+    print(f"\n  Running headless for {max_ticks} ticks...", end="", flush=True)
+    summary = sim.run_headless(
+        max_ticks=max_ticks,
+        scenario_name=scenario_name,
+    )
+    print(" done.")
+    print_summary(summary, scenario_name, len(sim.drones), max_ticks)
+    print(f"\n  Results written to: {os.path.abspath('results/')}")
 
 
 if __name__ == "__main__":

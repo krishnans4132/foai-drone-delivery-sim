@@ -12,29 +12,30 @@
 
 ## Overview
 
-This project simulates a fleet of autonomous drones delivering packages on a discrete grid. A drone perceives the current environment, plans and follows routes, manages its battery, and delivers its assigned package. A Delivery Manager allocates requests among available drones; a Weather Agent changes conditions stochastically. Obstacles, restricted cells, charging stations, packages, and delivery points are environment entities, not agents. The simulation core runs headless independently of the Pygame interface.
+This project simulates a fleet of autonomous drones delivering packages on a discrete grid. A drone perceives the current environment, plans and follows routes, manages its battery, and delivers its assigned package. A Delivery Manager allocates requests among available drones; a Weather Agent changes conditions stochastically. Obstacles, restricted cells, charging stations, packages, and delivery points are environment entities, not agents. The React web dashboard is the only interactive interface, backed by a Flask server; the simulation core also supports headless runs.
 
 The primary route planner is A*. The application also provides BFS, DFS, and Uniform Cost Search (UCS), an animated A* visualizer, a decision explanation panel, and a fleet scaling benchmark.
 
 ## Requirements and launch
 
-Python 3.10 or newer is required. Install the dependencies and launch the graphical application:
+Python 3.10 or newer and Node.js are required. Install dependencies, build the dashboard, and start the web server:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-
-# Option A: Launch Pygame Desktop GUI
+npm --prefix web install
+npm --prefix web run build
 python main.py
-
-# Option B: Launch React Web Mission Control Dashboard (http://localhost:5001)
-python main.py --web
 ```
 
-Set a fleet size from the command line (it overrides the scenario/config default):
+Open [http://localhost:5001](http://localhost:5001). For frontend development with hot reload, keep `python main.py` running in one terminal and run `npm --prefix web run dev` in a second terminal; then open [http://localhost:3000](http://localhost:3000).
+
+Use the dashboard's fleet and scenario controls while running. For headless runs, set a fleet size from the command line (it overrides the scenario/config default):
 
 ```bash
-python main.py --drones 8
-python main.py --scenario storm_stress --drones 10
+python main.py --headless --drones 8
+python main.py --headless --scenario storm_stress --drones 10
 ```
 
 Available scenario names are `simple_clear`, `busy_city`, `storm_stress`, and `default`. To run without a window, print a summary, and export metrics and the event log:
@@ -44,7 +45,7 @@ python main.py --scenario storm_stress --headless --seed 42 --drones 10
 python main.py --headless --run-all
 ```
 
-The GUI shows the current fleet count. Use **Add drone** and **Remove drone** or the `+` and `-` keys while the simulation is running. Invalid changes display a friendly validation message; removing a drone with an active delivery returns the request to the Manager's queue. Preset drone counts in `config.json` are defaults; `--drones N` overrides them.
+The dashboard shows the current fleet count. Use **Add drone** and **Remove drone** while the simulation is running. Invalid changes display a friendly validation message; removing a drone with an active delivery returns the request to the Manager's queue. Preset drone counts in `config.json` are defaults.
 
 Run planner and fleet comparisons, or the automated suite:
 
@@ -54,7 +55,7 @@ python benchmark_fleet.py --scenario simple_clear --sizes 1 2 4 8 12 --seed 42
 pytest -q
 ```
 
-`benchmark_fleet.py` writes CSV, JSON, and SVG outputs into `results/` by default. The GUI's **Benchmark** tab runs the selected scenario over fleet sizes 1, 2, 4, 8, and 12.
+`benchmark_fleet.py` writes CSV, JSON, and SVG outputs into `results/` by default. The dashboard's **Benchmark** tab runs the selected scenario over fleet sizes 1, 2, 4, 8, and 12.
 
 ## PEAS
 
@@ -112,7 +113,7 @@ When the remaining route becomes blocked/restricted or its cost rises beyond the
 
 ## User interface
 
-The Pygame view includes a labeled grid and legend, distinct map entity and weather visuals, per-drone colors/IDs, battery and status, carried package, planned route and trail. Side panels show PEAS, weather, fleet status, the request queue, live metrics, and a scrolling event log. Controls include play/pause, step, speed, reset, scenario and planner selection, route visibility, manual weather selection, random request creation, and live fleet changes. The window title contains the project name and course code; About/Help displays team details.
+The web dashboard includes a labeled grid and legend, map entity and weather visuals, per-drone colors/IDs, battery and status, carried package, planned route and trail. Panels show PEAS, weather, fleet status, the request queue, live metrics, and a scrolling event log. Controls include play/pause, step, speed, reset, scenario and planner selection, route visibility, manual weather selection, random request creation, and live fleet changes.
 
 The separate extension tabs provide:
 
@@ -132,14 +133,15 @@ The latest full test run for this project reported **59 passed**. The six UI evi
 
 | Path | Purpose |
 |---|---|
-| `main.py` | CLI, config/scenario loading, GUI and headless entry points. |
+| `main.py` | Web dashboard server entry point, config/scenario loading, and headless CLI. |
+| `server.py` | Flask API and built dashboard hosting. |
+| `web/` | React web dashboard and development server. |
 | `config.json` | Grid, fleet defaults, entities, requests, weather, and scenario presets. |
 | `sim/environment.py`, `sim/weather_agent.py` | Grid entities/costs and stochastic weather agent. |
 | `sim/planners.py` | A*, UCS, BFS, DFS search implementations and result type. |
 | `sim/drone_agent.py`, `sim/delivery_manager.py` | Drone perception/action/battery/replanning and request allocation. |
 | `sim/simulation.py`, `sim/metrics.py` | Tick/fleet/collision orchestration, metrics, and event exports. |
-| `sim/search_visualizer.py`, `ui/extension_panels.py` | Separate A* visualizer and decision explanation UI. |
-| `ui/renderer.py` | Pygame renderer, controls, dashboards, and extension shortcuts. |
+| `sim/search_visualizer.py` | A* visualizer and decision explanation logic used by the dashboard. |
 | `compare_planners.py`, `benchmark_fleet.py` | Reproducible planner and fleet benchmark drivers. |
 | `tests/` | Automated unit/integration and extension regression tests. |
 | `results/` | Summaries, event logs, comparison/benchmark data, matrix, and screenshots. |

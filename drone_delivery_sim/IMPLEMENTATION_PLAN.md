@@ -2,7 +2,7 @@
 
 ## Goal
 
-Deliver a deterministic, configurable multi-agent drone delivery simulation with a headless AI core, Pygame controls, reproducible metrics, and an additive educational extension.
+Deliver a deterministic, configurable multi-agent drone delivery simulation with a headless AI core, a React web dashboard, reproducible metrics, and an additive educational extension.
 
 ## Architecture and sequence
 
@@ -12,8 +12,8 @@ Deliver a deterministic, configurable multi-agent drone delivery simulation with
 4. **Drone behavior:** implement perceptions, state/action transitions, battery, charging, and replanning in `sim/drone_agent.py`.
 5. **Task allocation:** implement request queue, eligibility, scoring, and assignment explanations in `sim/delivery_manager.py`.
 6. **Simulation and evaluation:** coordinate agents, reservations, and runtime fleet changes in `sim/simulation.py`; track/export metrics and events in `sim/metrics.py`.
-7. **User interface:** visualize the running system and live controls in `ui/renderer.py`; keep core logic headless-capable.
-8. **Unique contribution:** isolate A* exploration and decision explanations in `sim/search_visualizer.py` and `ui/extension_panels.py`; benchmark fleet sizes in `benchmark_fleet.py`.
+7. **User interface:** visualize the running system and live controls in `web/`, backed by the Flask API in `server.py`; keep core logic headless-capable.
+8. **Unique contribution:** isolate A* exploration and decision explanations in `sim/search_visualizer.py`; provide fleet benchmarks in the web dashboard and `benchmark_fleet.py`.
 9. **Verification and documentation:** run tests, planner/fleet comparisons, seeded scenario matrix, capture UI evidence, then audit each requirement in `FOAI Drone Delivery Case Study Spec.md` and summarize operation in `README.md`.
 
 ## Design constraints
