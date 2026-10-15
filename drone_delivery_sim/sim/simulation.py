@@ -250,6 +250,98 @@ class Simulation:
         self.metrics.record_drone_removed(self.current_tick, target_id, task_requeued)
         return True
 
+    # ------------------------------------------------------------------
+    # Test & Live Demonstration Controls
+    # ------------------------------------------------------------------
+
+    def break_down_drone(self, drone_id: str) -> bool:
+        """Inject a mechanical breakdown into a drone. Requeues active task to manager."""
+        if drone_id not in self.drones:
+            return False
+        drone = self.drones[drone_id]
+        if drone.is_broken:
+            return False
+        drone.is_broken = True
+        drone.current_path = []
+
+        if drone.assigned_task is not None and drone.assigned_task.status != "DELIVERED":
+            task = drone.assigned_task
+            task.status = "PENDING"
+            task.assigned_drone_id = None
+            if drone.has_package:
+                task.pickup = drone.position
+                drone.has_package = False
+            self.delivery_manager.pending_requests.insert(0, task)
+            self.delivery_manager.assigned_requests = [
+                r for r in self.delivery_manager.assigned_requests
+                if r.id != task.id
+            ]
+            drone.assigned_task = None
+            self.metrics.event_log.log(
+                self.current_tick,
+                "FAULT",
+                f"[FAULT] {drone_id} mechanical failure at {drone.position}. Task {task.id} returned to pool for reassignment.",
+            )
+        else:
+            self.metrics.event_log.log(
+                self.current_tick,
+                "FAULT",
+                f"[FAULT] {drone_id} mechanical failure at {drone.position}.",
+            )
+        return True
+
+    def repair_drone(self, drone_id: str) -> bool:
+        """Clear faults and return broken drone to operational service."""
+        if drone_id not in self.drones:
+            return False
+        drone = self.drones[drone_id]
+        if not drone.is_broken:
+            return False
+        drone.is_broken = False
+        drone.state = DroneState.IDLE
+        self.metrics.event_log.log(
+            self.current_tick,
+            "REPAIR",
+            f"[REPAIRED] {drone_id} restored to service and available for allocation.",
+        )
+        return True
+
+    def drain_drone_battery(self, drone_id: str, pct: float = 12.0) -> bool:
+        """Trigger an emergency low-battery condition to demonstrate recharge detour."""
+        if drone_id not in self.drones:
+            return False
+        drone = self.drones[drone_id]
+        drone.battery = max(1.0, (pct / 100.0) * drone.battery_capacity)
+        self.metrics.event_log.log(
+            self.current_tick,
+            "BATTERY_ALERT",
+            f"[BATTERY ALERT] {drone_id} battery drained to {drone.battery:.1f} ({pct:.0f}%). Critical recharge required.",
+        )
+        return True
+
+    def inject_obstacle(self, pos: Tuple[int, int]) -> bool:
+        """Dynamically place a roadblock cell to test live A* replanning."""
+        pos_tup = (pos[0], pos[1])
+        if pos_tup not in self.env.obstacles and pos_tup not in self.env.charging_stations:
+            self.env.obstacles.add(pos_tup)
+            self.metrics.event_log.log(
+                self.current_tick,
+                "ROADBLOCK",
+                f"[ROADBLOCK] Dynamic obstacle placed at ({pos_tup[0]}, {pos_tup[1]}). Drones rerouting.",
+            )
+            return True
+        return False
+
+    def clear_injected_obstacles(self) -> None:
+        """Reset obstacles to scenario baseline."""
+        base_obs = [tuple(c) for c in self.config.get("grid", {}).get("obstacles", [])]
+        self.env.obstacles = set(base_obs)
+        self.metrics.event_log.log(
+            self.current_tick,
+            "ENVIRONMENT",
+            "[ENVIRONMENT] Dynamic obstacles cleared.",
+        )
+
     # ==================================================================
     # Core Simulation Tick
     # ==================================================================

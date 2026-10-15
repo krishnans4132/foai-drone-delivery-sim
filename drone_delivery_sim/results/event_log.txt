@@ -51,36 +51,105 @@
 [T0006] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0006] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
 [T0006] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0006] [REPLAN_STEP       ] DRONE-05: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0006] [REPLAN_STEP       ] DRONE-05: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (3, 2) is reserved by another drone'}
+[T0006] [REPLAN_STEP       ] DRONE-05: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 11.0, 'nodes_expanded': 21, 'reason': 'A* recomputed path with 11 waypoints (cost 11.00)'}
+[T0006] [REPLAN_STEP       ] DRONE-05: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (3, 1), 'remaining_waypoints': 11}
+[T0006] [REPLAN            ] DRONE-05: A* recomputed path with 11 waypoints (cost 11.00)
+[T0006] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0006] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (1, 3) is reserved by another drone'}
+[T0006] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 23.0, 'nodes_expanded': 112, 'reason': 'A* recomputed path with 23 waypoints (cost 23.00)'}
+[T0006] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 1), 'remaining_waypoints': 23}
+[T0006] [REPLAN            ] DRONE-03: A* recomputed path with 23 waypoints (cost 23.00)
 [T0007] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0007] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0007] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
+[T0007] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0007] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (3, 3) is reserved by another drone'}
+[T0007] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 7.0, 'nodes_expanded': 13, 'reason': 'A* recomputed path with 7 waypoints (cost 7.00)'}
+[T0007] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 2), 'remaining_waypoints': 7}
+[T0007] [REPLAN            ] DRONE-02: A* recomputed path with 7 waypoints (cost 7.00)
+[T0007] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0007] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (4, 1) is reserved by another drone'}
+[T0007] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 22.0, 'nodes_expanded': 90, 'reason': 'A* recomputed path with 22 waypoints (cost 22.00)'}
+[T0007] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 2), 'remaining_waypoints': 22}
+[T0007] [REPLAN            ] DRONE-03: A* recomputed path with 22 waypoints (cost 22.00)
+[T0007] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0007] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (0, 3) is reserved by another drone'}
+[T0007] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 27.0, 'nodes_expanded': 163, 'reason': 'A* recomputed path with 27 waypoints (cost 27.00)'}
+[T0007] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 1), 'remaining_waypoints': 27}
+[T0007] [REPLAN            ] DRONE-01: A* recomputed path with 27 waypoints (cost 27.00)
+[T0007] [COLLISION         ] Cell (1, 2) shared by ['DRONE-02', 'DRONE-03']
 [T0008] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0008] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0008] [CONFLICT_AVOIDED  ] DRONE-06 resolved via HOVER
-[T0008] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0008] [CONFLICT_AVOIDED  ] DRONE-06 resolved via REPLAN
+[T0008] [CONFLICT_AVOIDED  ] DRONE-03 resolved via REPLAN
+[T0008] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0008] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (1, 5) is reserved by another drone'}
+[T0008] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 13.0, 'nodes_expanded': 36, 'reason': 'A* recomputed path with 13 waypoints (cost 13.00)'}
+[T0008] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 4), 'remaining_waypoints': 13}
+[T0008] [REPLAN            ] DRONE-06: A* recomputed path with 13 waypoints (cost 13.00)
+[T0008] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0008] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (4, 2) is reserved by another drone'}
+[T0008] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 6.0, 'nodes_expanded': 8, 'reason': 'A* recomputed path with 6 waypoints (cost 6.00)'}
+[T0008] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 2), 'remaining_waypoints': 6}
+[T0008] [REPLAN            ] DRONE-02: A* recomputed path with 6 waypoints (cost 6.00)
+[T0008] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0008] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (2, 2) is reserved by another drone'}
+[T0008] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 21.0, 'nodes_expanded': 64, 'reason': 'A* recomputed path with 21 waypoints (cost 21.00)'}
+[T0008] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 3), 'remaining_waypoints': 21}
+[T0008] [REPLAN            ] DRONE-03: A* recomputed path with 21 waypoints (cost 21.00)
+[T0008] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0008] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (1, 3) is reserved by another drone'}
+[T0008] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 26.0, 'nodes_expanded': 131, 'reason': 'A* recomputed path with 26 waypoints (cost 26.00)'}
+[T0008] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 1), 'remaining_waypoints': 26}
+[T0008] [REPLAN            ] DRONE-01: A* recomputed path with 26 waypoints (cost 26.00)
 [T0009] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0009] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0009] [CONFLICT_AVOIDED  ] DRONE-03 resolved via REPLAN
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (2, 3) is reserved by another drone'}
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 20.0, 'nodes_expanded': 54, 'reason': 'A* recomputed path with 20 waypoints (cost 20.00)'}
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 4), 'remaining_waypoints': 20}
+[T0009] [REPLAN            ] DRONE-03: A* recomputed path with 20 waypoints (cost 20.00)
 [T0010] [WEATHER_CHANGE    ] Clear -> Rain
 [T0010] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0010] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
 [T0010] [PICKUP            ] DRONE-04 picked up REQ-001 at (2, 5)
+[T0010] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Clear to Rain'}
+[T0010] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 22.00 vs baseline 13.00 (ratio 1.69 > 1.5)'}
+[T0010] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 22.0, 'nodes_expanded': 46, 'reason': 'A* recomputed path with 11 waypoints (cost 22.00)'}
+[T0010] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 6), 'remaining_waypoints': 11}
+[T0010] [REPLAN            ] DRONE-06: A* recomputed path with 11 waypoints (cost 22.00)
 [T0010] [REPLAN_STEP       ] DRONE-08: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Clear to Rain'}
 [T0010] [REPLAN_STEP       ] DRONE-08: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 34.00 vs baseline 22.00 (ratio 1.55 > 1.5)'}
 [T0010] [REPLAN_STEP       ] DRONE-08: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 34.0, 'nodes_expanded': 164, 'reason': 'A* recomputed path with 17 waypoints (cost 34.00)'}
 [T0010] [REPLAN_STEP       ] DRONE-08: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (3, 6), 'remaining_waypoints': 17}
 [T0010] [REPLAN            ] DRONE-08: A* recomputed path with 17 waypoints (cost 34.00)
-[T0010] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Clear to Rain'}
-[T0010] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 48.00 vs baseline 27.00 (ratio 1.78 > 1.5)'}
-[T0010] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 48.0, 'nodes_expanded': 236, 'reason': 'A* recomputed path with 24 waypoints (cost 48.00)'}
-[T0010] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 4), 'remaining_waypoints': 24}
-[T0010] [REPLAN            ] DRONE-01: A* recomputed path with 24 waypoints (cost 48.00)
 [T0010] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Clear to Rain'}
-[T0010] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 40.00 vs baseline 23.00 (ratio 1.74 > 1.5)'}
-[T0010] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 40.0, 'nodes_expanded': 171, 'reason': 'A* recomputed path with 20 waypoints (cost 40.00)'}
-[T0010] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 4), 'remaining_waypoints': 20}
-[T0010] [REPLAN            ] DRONE-03: A* recomputed path with 20 waypoints (cost 40.00)
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 38.00 vs baseline 20.00 (ratio 1.90 > 1.5)'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 38.0, 'nodes_expanded': 155, 'reason': 'A* recomputed path with 19 waypoints (cost 38.00)'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 4), 'remaining_waypoints': 19}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (6, 7) is reserved by another drone'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 38.0, 'nodes_expanded': 148, 'reason': 'A* recomputed path with 19 waypoints (cost 38.00)'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 4), 'remaining_waypoints': 19}
+[T0010] [REPLAN            ] DRONE-03: A* recomputed path with 19 waypoints (cost 38.00)
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Clear to Rain'}
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 48.00 vs baseline 26.00 (ratio 1.85 > 1.5)'}
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 48.0, 'nodes_expanded': 241, 'reason': 'A* recomputed path with 24 waypoints (cost 48.00)'}
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 2), 'remaining_waypoints': 24}
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (2, 4) is reserved by another drone'}
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 48.0, 'nodes_expanded': 230, 'reason': 'A* recomputed path with 24 waypoints (cost 48.00)'}
+[T0010] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 2), 'remaining_waypoints': 24}
+[T0010] [REPLAN            ] DRONE-01: A* recomputed path with 24 waypoints (cost 48.00)
 [T0011] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0011] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0011] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0011] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (4, 3) is reserved by another drone'}
+[T0011] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 46.0, 'nodes_expanded': 223, 'reason': 'A* recomputed path with 23 waypoints (cost 46.00)'}
+[T0011] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 3), 'remaining_waypoints': 23}
+[T0011] [REPLAN            ] DRONE-01: A* recomputed path with 23 waypoints (cost 46.00)
 [T0012] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0012] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
 [T0013] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
@@ -89,921 +158,463 @@
 [T0014] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0014] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
 [T0014] [PICKUP            ] DRONE-02 picked up REQ-006 at (6, 3)
+[T0014] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0014] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 7) is reserved by another drone'}
+[T0014] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 30.0, 'nodes_expanded': 120, 'reason': 'A* recomputed path with 15 waypoints (cost 30.00)'}
+[T0014] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 4), 'remaining_waypoints': 15}
+[T0014] [REPLAN            ] DRONE-03: A* recomputed path with 15 waypoints (cost 30.00)
 [T0015] [WEATHER_CHANGE    ] Rain -> Windy
 [T0015] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0015] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0015] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0015] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0015] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 6) is reserved by another drone'}
+[T0015] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 31.5, 'nodes_expanded': 164, 'reason': 'A* recomputed path with 21 waypoints (cost 31.50)'}
+[T0015] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 4), 'remaining_waypoints': 21}
+[T0015] [REPLAN            ] DRONE-02: A* recomputed path with 21 waypoints (cost 31.50)
+[T0015] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0015] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 6) is reserved by another drone'}
+[T0015] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 21.0, 'nodes_expanded': 66, 'reason': 'A* recomputed path with 14 waypoints (cost 21.00)'}
+[T0015] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 5), 'remaining_waypoints': 14}
+[T0015] [REPLAN            ] DRONE-03: A* recomputed path with 14 waypoints (cost 21.00)
 [T0016] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0016] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0016] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0016] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 6) is reserved by another drone'}
+[T0016] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 30.0, 'nodes_expanded': 156, 'reason': 'A* recomputed path with 20 waypoints (cost 30.00)'}
+[T0016] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 5), 'remaining_waypoints': 20}
+[T0016] [REPLAN            ] DRONE-02: A* recomputed path with 20 waypoints (cost 30.00)
 [T0017] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0017] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0017] [PICKUP            ] DRONE-05 picked up REQ-002 at (12, 2)
 [T0018] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0018] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0018] [PICKUP            ] DRONE-05 picked up REQ-002 at (12, 2)
+[T0018] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0018] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 7) is reserved by another drone'}
+[T0018] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 27.0, 'nodes_expanded': 123, 'reason': 'A* recomputed path with 18 waypoints (cost 27.00)'}
+[T0018] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (7, 6), 'remaining_waypoints': 18}
+[T0018] [REPLAN            ] DRONE-02: A* recomputed path with 18 waypoints (cost 27.00)
 [T0019] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0019] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0019] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0019] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 7) is reserved by another drone'}
+[T0019] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 25.5, 'nodes_expanded': 116, 'reason': 'A* recomputed path with 17 waypoints (cost 25.50)'}
+[T0019] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (7, 7), 'remaining_waypoints': 17}
+[T0019] [REPLAN            ] DRONE-02: A* recomputed path with 17 waypoints (cost 25.50)
 [T0020] [WEATHER_CHANGE    ] Windy -> Rain
 [T0020] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0020] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0020] [PICKUP            ] DRONE-06 picked up REQ-005 at (1, 15)
+[T0020] [REPLAN_STEP       ] DRONE-05: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0020] [REPLAN_STEP       ] DRONE-05: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (12, 6) is reserved by another drone'}
+[T0020] [REPLAN_STEP       ] DRONE-05: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 44.0, 'nodes_expanded': 267, 'reason': 'A* recomputed path with 22 waypoints (cost 44.00)'}
+[T0020] [REPLAN_STEP       ] DRONE-05: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (12, 5), 'remaining_waypoints': 22}
+[T0020] [REPLAN            ] DRONE-05: A* recomputed path with 22 waypoints (cost 44.00)
 [T0021] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0021] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0021] [CHARGE_DETOUR     ] DRONE-06 diverting to nearest charging station
+[T0021] [PICKUP            ] DRONE-06 picked up REQ-005 at (1, 15)
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 9) is reserved by another drone'}
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 30.0, 'nodes_expanded': 130, 'reason': 'A* recomputed path with 15 waypoints (cost 30.00)'}
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (5, 10), 'remaining_waypoints': 15}
+[T0021] [REPLAN            ] DRONE-01: A* recomputed path with 15 waypoints (cost 30.00)
 [T0022] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0022] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0022] [REPLAN_STEP       ] DRONE-05: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0022] [REPLAN_STEP       ] DRONE-05: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (11, 7) is reserved by another drone'}
+[T0022] [REPLAN_STEP       ] DRONE-05: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 40.0, 'nodes_expanded': 224, 'reason': 'A* recomputed path with 20 waypoints (cost 40.00)'}
+[T0022] [REPLAN_STEP       ] DRONE-05: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (11, 6), 'remaining_waypoints': 20}
+[T0022] [REPLAN            ] DRONE-05: A* recomputed path with 20 waypoints (cost 40.00)
+[T0022] [CHARGE_DETOUR     ] DRONE-06 diverting to nearest charging station
+[T0022] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0022] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 14) is reserved by another drone'}
+[T0022] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 28.0, 'nodes_expanded': 114, 'reason': 'A* recomputed path with 14 waypoints (cost 28.00)'}
+[T0022] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (7, 10), 'remaining_waypoints': 14}
+[T0022] [REPLAN            ] DRONE-02: A* recomputed path with 14 waypoints (cost 28.00)
 [T0023] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0023] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0023] [REPLAN_STEP       ] DRONE-02: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0023] [REPLAN_STEP       ] DRONE-02: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 14) is reserved by another drone'}
+[T0023] [REPLAN_STEP       ] DRONE-02: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 26.0, 'nodes_expanded': 101, 'reason': 'A* recomputed path with 13 waypoints (cost 26.00)'}
+[T0023] [REPLAN_STEP       ] DRONE-02: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (7, 11), 'remaining_waypoints': 13}
+[T0023] [REPLAN            ] DRONE-02: A* recomputed path with 13 waypoints (cost 26.00)
 [T0024] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0024] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 12) is reserved by another drone'}
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 24.0, 'nodes_expanded': 65, 'reason': 'A* recomputed path with 12 waypoints (cost 24.00)'}
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 12), 'remaining_waypoints': 12}
+[T0024] [REPLAN            ] DRONE-01: A* recomputed path with 12 waypoints (cost 24.00)
 [T0025] [WEATHER_CHANGE    ] Rain -> Storm
 [T0025] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0025] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
 [T0025] [DELIVERY          ] DRONE-07 delivered REQ-003 at (16, 6) [ON TIME]
+[T0025] [CHARGE_DETOUR     ] DRONE-05 diverting to nearest charging station
 [T0025] [REPLAN_STEP       ] DRONE-04: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Rain to Storm'}
 [T0025] [REPLAN_STEP       ] DRONE-04: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (12, 18) is blocked or restricted under Storm'}
 [T0025] [REPLAN_STEP       ] DRONE-04: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 51.0, 'nodes_expanded': 125, 'reason': 'A* recomputed path with 17 waypoints (cost 51.00)'}
 [T0025] [REPLAN_STEP       ] DRONE-04: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (4, 18), 'remaining_waypoints': 17}
 [T0025] [REPLAN            ] DRONE-04: A* recomputed path with 17 waypoints (cost 51.00)
-[T0025] [CHARGE_DETOUR     ] DRONE-05 diverting to nearest charging station
 [T0025] [CHARGE_DETOUR     ] DRONE-02 diverting to nearest charging station
+[T0025] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0025] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 13) is reserved by another drone'}
+[T0025] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 33.0, 'nodes_expanded': 84, 'reason': 'A* recomputed path with 11 waypoints (cost 33.00)'}
+[T0025] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (7, 12), 'remaining_waypoints': 11}
+[T0025] [REPLAN            ] DRONE-01: A* recomputed path with 11 waypoints (cost 33.00)
 [T0026] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0026] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0026] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0027] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0027] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0027] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0027] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0027] [PICKUP            ] DRONE-08 picked up REQ-008 at (11, 14)
 [T0028] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0028] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0028] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0028] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0028] [CHARGE_DETOUR     ] DRONE-08 diverting to nearest charging station
+[T0028] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0028] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (11, 13) is reserved by another drone'}
+[T0028] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 30.0, 'nodes_expanded': 60, 'reason': 'A* recomputed path with 10 waypoints (cost 30.00)'}
+[T0028] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 13), 'remaining_waypoints': 10}
+[T0028] [REPLAN            ] DRONE-01: A* recomputed path with 10 waypoints (cost 30.00)
 [T0029] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0029] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0029] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0029] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0029] [PICKUP            ] DRONE-03 picked up REQ-007 at (17, 7)
+[T0029] [CHARGE_DETOUR     ] DRONE-01 diverting to nearest charging station
+[T0029] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0029] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (9, 9) is reserved by another drone'}
+[T0029] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 66.0, 'nodes_expanded': 315, 'reason': 'A* recomputed path with 22 waypoints (cost 66.00)'}
+[T0029] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 12), 'remaining_waypoints': 22}
+[T0029] [REPLAN            ] DRONE-01: A* recomputed path with 22 waypoints (cost 66.00)
 [T0030] [WEATHER_CHANGE    ] Storm -> Clear
 [T0030] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0030] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0030] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0030] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0030] [REPLAN_STEP       ] DRONE-04: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0030] [REPLAN_STEP       ] DRONE-04: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (11, 17) is reserved by another drone'}
+[T0030] [REPLAN_STEP       ] DRONE-04: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 10.0, 'nodes_expanded': 11, 'reason': 'A* recomputed path with 10 waypoints (cost 10.00)'}
+[T0030] [REPLAN_STEP       ] DRONE-04: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 18), 'remaining_waypoints': 10}
+[T0030] [REPLAN            ] DRONE-04: A* recomputed path with 10 waypoints (cost 10.00)
 [T0031] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0031] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0031] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0031] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0031] [PICKUP            ] DRONE-03 picked up REQ-007 at (17, 7)
+[T0031] [CONFLICT_AVOIDED  ] DRONE-05 resolved via REPLAN
+[T0031] [REPLAN_STEP       ] DRONE-04: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0031] [REPLAN_STEP       ] DRONE-04: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (11, 18) is reserved by another drone'}
+[T0031] [REPLAN_STEP       ] DRONE-04: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 11.0, 'nodes_expanded': 30, 'reason': 'A* recomputed path with 11 waypoints (cost 11.00)'}
+[T0031] [REPLAN_STEP       ] DRONE-04: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (10, 18), 'remaining_waypoints': 11}
+[T0031] [REPLAN            ] DRONE-04: A* recomputed path with 11 waypoints (cost 11.00)
+[T0031] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0031] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (10, 8) is reserved by another drone'}
+[T0031] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 18.0, 'nodes_expanded': 58, 'reason': 'A* recomputed path with 18 waypoints (cost 18.00)'}
+[T0031] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (16, 8), 'remaining_waypoints': 18}
+[T0031] [REPLAN            ] DRONE-03: A* recomputed path with 18 waypoints (cost 18.00)
+[T0031] [REPLAN_STEP       ] DRONE-05: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0031] [REPLAN_STEP       ] DRONE-05: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (9, 9) is reserved by another drone'}
+[T0031] [REPLAN_STEP       ] DRONE-05: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 17.0, 'nodes_expanded': 57, 'reason': 'A* recomputed path with 17 waypoints (cost 17.00)'}
+[T0031] [REPLAN_STEP       ] DRONE-05: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (10, 8), 'remaining_waypoints': 17}
+[T0031] [REPLAN            ] DRONE-05: A* recomputed path with 17 waypoints (cost 17.00)
 [T0032] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0032] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0032] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0032] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0032] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0032] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (9, 8) is reserved by another drone'}
+[T0032] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 17.0, 'nodes_expanded': 52, 'reason': 'A* recomputed path with 17 waypoints (cost 17.00)'}
+[T0032] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (15, 8), 'remaining_waypoints': 17}
+[T0032] [REPLAN            ] DRONE-03: A* recomputed path with 17 waypoints (cost 17.00)
+[T0032] [REPLAN_STEP       ] DRONE-05: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0032] [REPLAN_STEP       ] DRONE-05: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 10) is reserved by another drone'}
+[T0032] [REPLAN_STEP       ] DRONE-05: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 16.0, 'nodes_expanded': 51, 'reason': 'A* recomputed path with 16 waypoints (cost 16.00)'}
+[T0032] [REPLAN_STEP       ] DRONE-05: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 8), 'remaining_waypoints': 16}
+[T0032] [REPLAN            ] DRONE-05: A* recomputed path with 16 waypoints (cost 16.00)
 [T0033] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0033] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0033] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0033] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0033] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0033] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 8) is reserved by another drone'}
+[T0033] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 16.0, 'nodes_expanded': 46, 'reason': 'A* recomputed path with 16 waypoints (cost 16.00)'}
+[T0033] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (14, 8), 'remaining_waypoints': 16}
+[T0033] [REPLAN            ] DRONE-03: A* recomputed path with 16 waypoints (cost 16.00)
+[T0033] [REPLAN_STEP       ] DRONE-05: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0033] [REPLAN_STEP       ] DRONE-05: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 9) is reserved by another drone'}
+[T0033] [REPLAN_STEP       ] DRONE-05: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 15.0, 'nodes_expanded': 48, 'reason': 'A* recomputed path with 15 waypoints (cost 15.00)'}
+[T0033] [REPLAN_STEP       ] DRONE-05: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (8, 8), 'remaining_waypoints': 15}
+[T0033] [REPLAN            ] DRONE-05: A* recomputed path with 15 waypoints (cost 15.00)
+[T0033] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0033] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 8) is reserved by another drone'}
+[T0033] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 18.0, 'nodes_expanded': 86, 'reason': 'A* recomputed path with 18 waypoints (cost 18.00)'}
+[T0033] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (8, 9), 'remaining_waypoints': 18}
+[T0033] [REPLAN            ] DRONE-01: A* recomputed path with 18 waypoints (cost 18.00)
 [T0034] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0034] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0034] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0034] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0034] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0034] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0034] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 8) is reserved by another drone'}
+[T0034] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 13.0, 'nodes_expanded': 21, 'reason': 'A* recomputed path with 13 waypoints (cost 13.00)'}
+[T0034] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (13, 8), 'remaining_waypoints': 13}
+[T0034] [REPLAN            ] DRONE-03: A* recomputed path with 13 waypoints (cost 13.00)
+[T0034] [REPLAN_STEP       ] DRONE-05: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0034] [REPLAN_STEP       ] DRONE-05: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 9) is reserved by another drone'}
+[T0034] [REPLAN_STEP       ] DRONE-05: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 14.0, 'nodes_expanded': 52, 'reason': 'A* recomputed path with 14 waypoints (cost 14.00)'}
+[T0034] [REPLAN_STEP       ] DRONE-05: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (8, 9), 'remaining_waypoints': 14}
+[T0034] [REPLAN            ] DRONE-05: A* recomputed path with 14 waypoints (cost 14.00)
+[T0034] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0034] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 8) is reserved by another drone'}
+[T0034] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 17.0, 'nodes_expanded': 85, 'reason': 'A* recomputed path with 17 waypoints (cost 17.00)'}
+[T0034] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (8, 8), 'remaining_waypoints': 17}
+[T0034] [REPLAN            ] DRONE-01: A* recomputed path with 17 waypoints (cost 17.00)
 [T0035] [WEATHER_CHANGE    ] Clear -> Windy
 [T0035] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0035] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0035] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0035] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0035] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 10) is reserved by another drone'}
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 18.0, 'nodes_expanded': 47, 'reason': 'A* recomputed path with 12 waypoints (cost 18.00)'}
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (13, 9), 'remaining_waypoints': 12}
+[T0035] [REPLAN            ] DRONE-03: A* recomputed path with 12 waypoints (cost 18.00)
 [T0036] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0036] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0036] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0036] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0036] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0036] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0036] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 6) is reserved by another drone'}
+[T0036] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 42.0, 'nodes_expanded': 289, 'reason': 'A* recomputed path with 28 waypoints (cost 42.00)'}
+[T0036] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 13), 'remaining_waypoints': 28}
+[T0036] [REPLAN            ] DRONE-06: A* recomputed path with 28 waypoints (cost 42.00)
 [T0037] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0037] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0037] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0037] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0037] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0038] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0038] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0038] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0038] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0038] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0039] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0039] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0039] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0039] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0039] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0040] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0040] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0040] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0040] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0040] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0041] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0041] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0041] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0041] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0041] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0042] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0042] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0042] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0042] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0042] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0042] [DELIVERY          ] DRONE-04 delivered REQ-001 at (18, 18) [ON TIME]
 [T0043] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0043] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0043] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0043] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0043] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0044] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0044] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0044] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0044] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0044] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0045] [WEATHER_CHANGE    ] Windy -> Storm
 [T0045] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0045] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0045] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0045] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0045] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0045] [CHARGE_DETOUR     ] DRONE-03 diverting to nearest charging station
+[T0045] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0045] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (5, 9) is reserved by another drone'}
+[T0045] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 15.0, 'nodes_expanded': 23, 'reason': 'A* recomputed path with 5 waypoints (cost 15.00)'}
+[T0045] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 10), 'remaining_waypoints': 5}
+[T0045] [REPLAN            ] DRONE-03: A* recomputed path with 5 waypoints (cost 15.00)
+[T0045] [CHARGE_DETOUR     ] DRONE-06 diverting to nearest charging station
+[T0045] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0045] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (9, 9) is reserved by another drone'}
+[T0045] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 24.0, 'nodes_expanded': 51, 'reason': 'A* recomputed path with 8 waypoints (cost 24.00)'}
+[T0045] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (5, 9), 'remaining_waypoints': 8}
+[T0045] [REPLAN            ] DRONE-06: A* recomputed path with 8 waypoints (cost 24.00)
 [T0046] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0046] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0046] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0046] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0046] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0046] [CONFLICT_AVOIDED  ] DRONE-06 resolved via REPLAN
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (6, 9) is reserved by another drone'}
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 21.0, 'nodes_expanded': 36, 'reason': 'A* recomputed path with 7 waypoints (cost 21.00)'}
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (5, 10), 'remaining_waypoints': 7}
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (9, 9) is reserved by another drone'}
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 27.0, 'nodes_expanded': 57, 'reason': 'A* recomputed path with 9 waypoints (cost 27.00)'}
+[T0046] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (5, 10), 'remaining_waypoints': 9}
+[T0046] [REPLAN            ] DRONE-06: A* recomputed path with 9 waypoints (cost 27.00)
 [T0047] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0047] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0047] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0047] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0047] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0047] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0047] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0047] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 9) is reserved by another drone'}
+[T0047] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 24.0, 'nodes_expanded': 53, 'reason': 'A* recomputed path with 8 waypoints (cost 24.00)'}
+[T0047] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 10), 'remaining_waypoints': 8}
+[T0047] [REPLAN            ] DRONE-06: A* recomputed path with 8 waypoints (cost 24.00)
+[T0047] [DELIVERY          ] DRONE-02 delivered REQ-006 at (13, 17) [ON TIME]
 [T0048] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0048] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0048] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0048] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0048] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0048] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0048] [DELIVERY          ] DRONE-05 delivered REQ-002 at (2, 16) [ON TIME]
+[T0048] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0048] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 9) is reserved by another drone'}
+[T0048] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 21.0, 'nodes_expanded': 43, 'reason': 'A* recomputed path with 7 waypoints (cost 21.00)'}
+[T0048] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (6, 9), 'remaining_waypoints': 7}
+[T0048] [REPLAN            ] DRONE-06: A* recomputed path with 7 waypoints (cost 21.00)
 [T0049] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0049] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0049] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0049] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0049] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0049] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0050] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0050] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0050] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0050] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0050] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0050] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0051] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0051] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0051] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0051] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0051] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0051] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0052] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0052] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0052] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0052] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0052] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0052] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0053] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0053] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0053] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0053] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0053] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0053] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0054] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0054] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0054] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0054] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0054] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0054] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0055] [WEATHER_CHANGE    ] Storm -> Rain
 [T0055] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0055] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0055] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0055] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0055] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0055] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0056] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0056] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0056] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0056] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0056] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0056] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0057] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0057] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0057] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0057] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0057] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0057] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0058] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0058] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0058] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0058] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0058] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0058] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0059] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0059] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0059] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0059] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0059] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0059] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0059] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0059] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (10, 9) is reserved by another drone'}
+[T0059] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 54.0, 'nodes_expanded': 243, 'reason': 'A* recomputed path with 27 waypoints (cost 54.00)'}
+[T0059] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 1), 'remaining_waypoints': 27}
+[T0059] [REPLAN            ] DRONE-01: A* recomputed path with 27 waypoints (cost 54.00)
 [T0060] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0060] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0060] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0060] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0060] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0060] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0060] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0060] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (10, 8) is reserved by another drone'}
+[T0060] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 52.0, 'nodes_expanded': 241, 'reason': 'A* recomputed path with 26 waypoints (cost 52.00)'}
+[T0060] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 2), 'remaining_waypoints': 26}
+[T0060] [REPLAN            ] DRONE-01: A* recomputed path with 26 waypoints (cost 52.00)
 [T0061] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0061] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0061] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0061] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0061] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0061] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0062] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0062] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0062] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0062] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0062] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0062] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0063] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0063] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0063] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0063] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0063] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0063] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0064] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0064] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0064] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0064] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0064] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0064] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0064] [DELIVERY          ] DRONE-03 delivered REQ-007 at (3, 10) [ON TIME]
 [T0065] [WEATHER_CHANGE    ] Rain -> Storm
 [T0065] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0065] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0065] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0065] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0065] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0065] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0065] [CHARGE_DETOUR     ] DRONE-08 diverting to nearest charging station
+[T0065] [REPLAN_STEP       ] DRONE-06: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Rain to Storm'}
+[T0065] [REPLAN_STEP       ] DRONE-06: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (16, 3) is blocked or restricted under Storm'}
+[T0065] [REPLAN_STEP       ] DRONE-06: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 24.0, 'nodes_expanded': 60, 'reason': 'A* recomputed path with 8 waypoints (cost 24.00)'}
+[T0065] [REPLAN_STEP       ] DRONE-06: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (13, 6), 'remaining_waypoints': 8}
+[T0065] [REPLAN            ] DRONE-06: A* recomputed path with 8 waypoints (cost 24.00)
+[T0065] [CHARGE_DETOUR     ] DRONE-01 diverting to nearest charging station
 [T0066] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0066] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0066] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0066] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0066] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0066] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0067] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0067] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0067] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0067] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0067] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0067] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0068] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0068] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0068] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0068] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0068] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0068] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0069] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0069] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0069] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0069] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0069] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0069] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0070] [WEATHER_CHANGE    ] Storm -> Rain
 [T0070] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0070] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0070] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0070] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0070] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0070] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0071] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0071] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0071] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0071] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0071] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0071] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0072] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0072] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0072] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0072] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0072] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0072] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0073] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0073] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0073] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0073] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0073] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0073] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0073] [DELIVERY          ] DRONE-06 delivered REQ-005 at (17, 3) [ON TIME]
 [T0074] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0074] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0074] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0074] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0074] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0074] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0074] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0074] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (10, 9) is reserved by another drone'}
+[T0074] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 54.0, 'nodes_expanded': 242, 'reason': 'A* recomputed path with 27 waypoints (cost 54.00)'}
+[T0074] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 1), 'remaining_waypoints': 27}
+[T0074] [REPLAN            ] DRONE-01: A* recomputed path with 27 waypoints (cost 54.00)
 [T0075] [WEATHER_CHANGE    ] Rain -> Clear
 [T0075] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0075] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0075] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0075] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0075] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0075] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0076] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0076] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0076] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0076] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0076] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0076] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0077] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0077] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0077] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0077] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0077] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0077] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0078] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0078] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0078] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0078] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0078] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0078] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0078] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0078] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (10, 8) is reserved by another drone'}
+[T0078] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 23.0, 'nodes_expanded': 123, 'reason': 'A* recomputed path with 23 waypoints (cost 23.00)'}
+[T0078] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 5), 'remaining_waypoints': 23}
+[T0078] [REPLAN            ] DRONE-01: A* recomputed path with 23 waypoints (cost 23.00)
 [T0079] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0079] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0079] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0079] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0079] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0079] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0080] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0080] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0080] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0080] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0080] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0080] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0081] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0081] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0081] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0081] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0081] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0081] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0082] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0082] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0082] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0082] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0082] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0082] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0083] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0083] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0083] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0083] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0083] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0083] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0084] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0084] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0084] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0084] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0084] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0084] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0085] [WEATHER_CHANGE    ] Clear -> Storm
 [T0085] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0085] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0085] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0085] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0085] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0085] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0086] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0086] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0086] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0086] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0086] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0086] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0086] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0086] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 45.00 vs baseline 23.00 (ratio 1.96 > 1.5)'}
+[T0086] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 45.0, 'nodes_expanded': 161, 'reason': 'A* recomputed path with 15 waypoints (cost 45.00)'}
+[T0086] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (4, 9), 'remaining_waypoints': 15}
+[T0086] [REPLAN            ] DRONE-01: A* recomputed path with 15 waypoints (cost 45.00)
 [T0087] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0087] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0087] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0087] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0087] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0087] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0088] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0088] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0088] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0088] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0088] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0088] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0089] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0089] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0089] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0089] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0089] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0089] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0090] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0090] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0090] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0090] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0090] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0090] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0090] [DELIVERY          ] DRONE-08 delivered REQ-008 at (5, 2) [LATE]
 [T0091] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0091] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0091] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0091] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0091] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0091] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0092] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0092] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0092] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0092] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0092] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0092] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0093] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0093] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0093] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0093] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0093] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0093] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0094] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0094] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0094] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0094] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0094] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0094] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0095] [WEATHER_CHANGE    ] Storm -> Windy
 [T0095] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0095] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0095] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0095] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0095] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0095] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0096] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0096] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0096] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0096] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0096] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0096] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0097] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0097] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0097] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0097] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0097] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0097] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0098] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0098] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0098] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0098] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0098] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0098] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0099] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0099] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0099] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0099] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0099] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0099] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0100] [WEATHER_CHANGE    ] Windy -> Rain
 [T0100] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0100] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0100] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0100] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0100] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0100] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0101] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
 [T0101] [EXPIRY            ] Request REQ-010 expired (deadline missed)
-[T0101] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0101] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0101] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0101] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0101] [PICKUP            ] DRONE-01 picked up REQ-004 at (15, 12)
 [T0102] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0102] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0102] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0102] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0102] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0102] [CHARGE_DETOUR     ] DRONE-01 diverting to nearest charging station
 [T0103] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0103] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0103] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0103] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0103] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0104] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0104] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0104] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0104] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0104] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0105] [WEATHER_CHANGE    ] Rain -> Storm
 [T0105] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0105] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0105] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0105] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0105] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0105] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Rain to Storm'}
 [T0105] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (12, 9) is blocked or restricted under Storm'}
-[T0105] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 30.0, 'nodes_expanded': 84, 'reason': 'A* recomputed path with 10 waypoints (cost 30.00)'}
-[T0105] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (11, 9), 'remaining_waypoints': 10}
-[T0105] [REPLAN            ] DRONE-01: A* recomputed path with 10 waypoints (cost 30.00)
+[T0105] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 21.0, 'nodes_expanded': 46, 'reason': 'A* recomputed path with 7 waypoints (cost 21.00)'}
+[T0105] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (14, 9), 'remaining_waypoints': 7}
+[T0105] [REPLAN            ] DRONE-01: A* recomputed path with 7 waypoints (cost 21.00)
 [T0106] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0106] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0106] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0106] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0106] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0107] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0107] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0107] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0107] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0107] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0108] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0108] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0108] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0108] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0108] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0109] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0109] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0109] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0109] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0109] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0110] [WEATHER_CHANGE    ] Storm -> Windy
 [T0110] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0110] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0110] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0110] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0110] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0111] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0111] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0111] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0111] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0111] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0112] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0112] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0112] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0112] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0112] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0113] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0113] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0113] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0113] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0113] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0114] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0114] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0114] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0114] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0114] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0115] [WEATHER_CHANGE    ] Windy -> Storm
 [T0115] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0115] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0115] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0115] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0115] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0116] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0116] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0116] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0116] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0116] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0117] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0117] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0117] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0117] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0117] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0118] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0118] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0118] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0118] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0118] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0119] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0119] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0119] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0119] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0119] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0120] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0120] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0120] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0120] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0120] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0121] [EXPIRY            ] Request REQ-009 expired (deadline missed)
-[T0121] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0121] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0121] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0121] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0122] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0122] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0122] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0122] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0123] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0123] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0123] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0123] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0124] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0124] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0124] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0124] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0125] [WEATHER_CHANGE    ] Storm -> Windy
-[T0125] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0125] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0125] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0125] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0126] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0126] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0126] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0126] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0127] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0127] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0127] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0127] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0128] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0128] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0128] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0128] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0129] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0129] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0129] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0129] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0130] [WEATHER_CHANGE    ] Windy -> Rain
-[T0130] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0130] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0130] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0130] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0131] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0131] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0131] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0131] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0132] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0132] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0132] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0132] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0133] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0133] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0133] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0133] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0134] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0134] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0134] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0134] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
+[T0130] [DELIVERY          ] DRONE-01 delivered REQ-004 at (4, 4) [LATE]
 [T0135] [WEATHER_CHANGE    ] Rain -> Storm
-[T0135] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0135] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0135] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0135] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0135] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Rain to Storm'}
-[T0135] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (13, 8) is blocked or restricted under Storm'}
-[T0135] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 24.0, 'nodes_expanded': 51, 'reason': 'A* recomputed path with 8 waypoints (cost 24.00)'}
-[T0135] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (11, 9), 'remaining_waypoints': 8}
-[T0135] [REPLAN            ] DRONE-01: A* recomputed path with 8 waypoints (cost 24.00)
-[T0136] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0136] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0136] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0136] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0137] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0137] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0137] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0137] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0138] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0138] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0138] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0138] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0139] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0139] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0139] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0139] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0140] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0140] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0140] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0140] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0141] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0141] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0141] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0141] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0142] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0142] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0142] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0142] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0143] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0143] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0143] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0143] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0144] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0144] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0144] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0144] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0145] [WEATHER_CHANGE    ] Storm -> Windy
-[T0145] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0145] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0145] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0145] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0146] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0146] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0146] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0146] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0147] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0147] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0147] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0147] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0148] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0148] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0148] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0148] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0149] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0149] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0149] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0149] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0150] [WEATHER_CHANGE    ] Windy -> Rain
-[T0150] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0150] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0150] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0150] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0151] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0151] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0151] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0151] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0152] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0152] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0152] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0152] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0153] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0153] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0153] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0153] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0154] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0154] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0154] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0154] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0155] [WEATHER_CHANGE    ] Rain -> Windy
-[T0155] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0155] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0155] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0155] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0156] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0156] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0156] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0156] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0157] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0157] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0157] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0157] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0158] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0158] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0158] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0158] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0159] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0159] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0159] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0159] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0160] [WEATHER_CHANGE    ] Windy -> Storm
-[T0160] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0160] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0160] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0160] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0161] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0161] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0161] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0161] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0162] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0162] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0162] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0162] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0163] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0163] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0163] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0163] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0164] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0164] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0164] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0164] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0165] [WEATHER_CHANGE    ] Storm -> Rain
-[T0165] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0165] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0165] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0165] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0166] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0166] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0166] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0166] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0167] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0167] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0167] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0167] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0168] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0168] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0168] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0168] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0169] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0169] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0169] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0169] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0170] [WEATHER_CHANGE    ] Rain -> Windy
-[T0170] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0170] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0170] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0170] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0171] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0171] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0171] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0171] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0172] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0172] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0172] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0172] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0173] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0173] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0173] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0173] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0174] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0174] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0174] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0174] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0175] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0175] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0175] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0175] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0176] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0176] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0176] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0176] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0177] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0177] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0177] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0177] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0178] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0178] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0178] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0178] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0179] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0179] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0179] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0179] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0180] [WEATHER_CHANGE    ] Windy -> Storm
-[T0180] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0180] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0180] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0180] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0181] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0181] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0181] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0181] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0182] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0182] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0182] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0182] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0183] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0183] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0183] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0183] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0184] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0184] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0184] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0184] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0185] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0185] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0185] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0185] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0186] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0186] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0186] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0186] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0187] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0187] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0187] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0187] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0188] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0188] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0188] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0188] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0189] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0189] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0189] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0189] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0190] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0190] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0190] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0190] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0191] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0191] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0191] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0191] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0192] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0192] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0192] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0192] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0193] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0193] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0193] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0193] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0194] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0194] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0194] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0194] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0195] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0195] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0195] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0195] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0196] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0196] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0196] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0196] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0197] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0197] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0197] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0197] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0198] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0198] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0198] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0198] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
-[T0199] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0199] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0199] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0199] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER
 [T0200] [WEATHER_CHANGE    ] Storm -> Rain
-[T0200] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
-[T0200] [CONFLICT_AVOIDED  ] DRONE-05 resolved via HOVER
-[T0200] [CONFLICT_AVOIDED  ] DRONE-08 resolved via HOVER
-[T0200] [CONFLICT_AVOIDED  ] DRONE-01 resolved via HOVER

@@ -52,6 +52,11 @@
 [T0006] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0006] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0006] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0006] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0006] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (1, 2) is reserved by another drone'}
+[T0006] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 14.0, 'nodes_expanded': 38, 'reason': 'A* recomputed path with 14 waypoints (cost 14.00)'}
+[T0006] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (0, 1), 'remaining_waypoints': 14}
+[T0006] [REPLAN            ] DRONE-01: A* recomputed path with 14 waypoints (cost 14.00)
 [T0007] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0007] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0007] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
@@ -70,7 +75,12 @@
 [T0009] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0009] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0009] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0009] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
+[T0009] [CONFLICT_AVOIDED  ] DRONE-03 resolved via REPLAN
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (1, 5) is reserved by another drone'}
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 20.0, 'nodes_expanded': 93, 'reason': 'A* recomputed path with 20 waypoints (cost 20.00)'}
+[T0009] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 4), 'remaining_waypoints': 20}
+[T0009] [REPLAN            ] DRONE-03: A* recomputed path with 20 waypoints (cost 20.00)
 [T0010] [WEATHER_CHANGE    ] Clear -> Rain
 [T0010] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0010] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
@@ -78,11 +88,16 @@
 [T0010] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0010] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0010] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0010] [CONFLICT_AVOIDED  ] DRONE-03 resolved via REPLAN
 [T0010] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': True, 'reason': 'Weather shifted from Clear to Rain'}
-[T0010] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 40.00 vs baseline 24.00 (ratio 1.67 > 1.5)'}
-[T0010] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 40.0, 'nodes_expanded': 194, 'reason': 'A* recomputed path with 20 waypoints (cost 40.00)'}
-[T0010] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (1, 5), 'remaining_waypoints': 20}
-[T0010] [REPLAN            ] DRONE-03: A* recomputed path with 20 waypoints (cost 40.00)
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Route cost escalated beyond threshold: 38.00 vs baseline 20.00 (ratio 1.90 > 1.5)'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 38.0, 'nodes_expanded': 192, 'reason': 'A* recomputed path with 19 waypoints (cost 38.00)'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (2, 5), 'remaining_waypoints': 19}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (2, 5) is reserved by another drone'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 38.0, 'nodes_expanded': 185, 'reason': 'A* recomputed path with 19 waypoints (cost 38.00)'}
+[T0010] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (3, 4), 'remaining_waypoints': 19}
+[T0010] [REPLAN            ] DRONE-03: A* recomputed path with 19 waypoints (cost 38.00)
 [T0011] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0011] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0011] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
@@ -147,7 +162,6 @@
 [T0020] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0020] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0020] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0020] [CONFLICT_AVOIDED  ] DRONE-03 resolved via HOVER
 [T0020] [PICKUP            ] DRONE-01 picked up REQ-002 at (12, 2)
 [T0021] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0021] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
@@ -155,6 +169,11 @@
 [T0021] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0021] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0021] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (12, 6) is reserved by another drone'}
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 48.0, 'nodes_expanded': 289, 'reason': 'A* recomputed path with 24 waypoints (cost 48.00)'}
+[T0021] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (12, 3), 'remaining_waypoints': 24}
+[T0021] [REPLAN            ] DRONE-01: A* recomputed path with 24 waypoints (cost 48.00)
 [T0022] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0022] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0022] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
@@ -173,6 +192,11 @@
 [T0024] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0024] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0024] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (7, 14) is reserved by another drone'}
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 42.0, 'nodes_expanded': 252, 'reason': 'A* recomputed path with 21 waypoints (cost 42.00)'}
+[T0024] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (12, 6), 'remaining_waypoints': 21}
+[T0024] [REPLAN            ] DRONE-01: A* recomputed path with 21 waypoints (cost 42.00)
 [T0025] [WEATHER_CHANGE    ] Rain -> Storm
 [T0025] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0025] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
@@ -212,6 +236,7 @@
 [T0029] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0029] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0029] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0029] [PICKUP            ] DRONE-03 picked up REQ-008 at (11, 14)
 [T0030] [WEATHER_CHANGE    ] Storm -> Clear
 [T0030] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0030] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
@@ -225,7 +250,6 @@
 [T0031] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0031] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0031] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
-[T0031] [PICKUP            ] DRONE-03 picked up REQ-008 at (11, 14)
 [T0032] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0032] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0032] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
@@ -251,12 +275,32 @@
 [T0035] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0035] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0035] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (9, 9) is reserved by another drone'}
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 19.5, 'nodes_expanded': 57, 'reason': 'A* recomputed path with 13 waypoints (cost 19.50)'}
+[T0035] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 10), 'remaining_waypoints': 13}
+[T0035] [REPLAN            ] DRONE-03: A* recomputed path with 13 waypoints (cost 19.50)
+[T0035] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0035] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (9, 10) is reserved by another drone'}
+[T0035] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 22.5, 'nodes_expanded': 84, 'reason': 'A* recomputed path with 15 waypoints (cost 22.50)'}
+[T0035] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 9), 'remaining_waypoints': 15}
+[T0035] [REPLAN            ] DRONE-01: A* recomputed path with 15 waypoints (cost 22.50)
 [T0036] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0036] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0036] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
 [T0036] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0036] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0036] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0036] [REPLAN_STEP       ] DRONE-03: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0036] [REPLAN_STEP       ] DRONE-03: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 9) is reserved by another drone'}
+[T0036] [REPLAN_STEP       ] DRONE-03: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 18.0, 'nodes_expanded': 61, 'reason': 'A* recomputed path with 12 waypoints (cost 18.00)'}
+[T0036] [REPLAN_STEP       ] DRONE-03: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 9), 'remaining_waypoints': 12}
+[T0036] [REPLAN            ] DRONE-03: A* recomputed path with 12 waypoints (cost 18.00)
+[T0036] [REPLAN_STEP       ] DRONE-01: STEP_1_DETECT_CHANGE | {'has_changed': False, 'reason': ''}
+[T0036] [REPLAN_STEP       ] DRONE-01: STEP_2_CHECK_SUITABILITY | {'is_suitable': False, 'reason': 'Remaining waypoint (8, 10) is reserved by another drone'}
+[T0036] [REPLAN_STEP       ] DRONE-01: STEP_3_RECOMPUTE_ASTAR | {'success': True, 'cost': 21.0, 'nodes_expanded': 82, 'reason': 'A* recomputed path with 14 waypoints (cost 21.00)'}
+[T0036] [REPLAN_STEP       ] DRONE-01: STEP_4_CONTINUE_ROUTE | {'next_waypoint': (9, 10), 'remaining_waypoints': 14}
+[T0036] [REPLAN            ] DRONE-01: A* recomputed path with 14 waypoints (cost 21.00)
 [T0037] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0037] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0037] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
@@ -343,6 +387,7 @@
 [T0050] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0050] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0050] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0050] [DELIVERY          ] DRONE-01 delivered REQ-002 at (2, 16) [ON TIME]
 [T0051] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0051] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0051] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
@@ -355,6 +400,7 @@
 [T0052] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0052] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0052] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0052] [DELIVERY          ] DRONE-02 delivered REQ-001 at (18, 18) [ON TIME]
 [T0053] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0053] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0053] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)
@@ -478,6 +524,7 @@
 [T0072] [ASSIGNMENT        ] Request REQ-004 could NOT be assigned (no eligible drone)
 [T0072] [ASSIGNMENT        ] Request REQ-010 could NOT be assigned (no eligible drone)
 [T0072] [ASSIGNMENT        ] Request REQ-009 could NOT be assigned (no eligible drone)
+[T0072] [DELIVERY          ] DRONE-03 delivered REQ-008 at (5, 2) [LATE]
 [T0073] [ASSIGNMENT        ] Request REQ-005 could NOT be assigned (no eligible drone)
 [T0073] [ASSIGNMENT        ] Request REQ-006 could NOT be assigned (no eligible drone)
 [T0073] [ASSIGNMENT        ] Request REQ-007 could NOT be assigned (no eligible drone)

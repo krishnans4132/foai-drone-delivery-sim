@@ -121,6 +121,7 @@ class DroneAgent:
         self.sensor_radius = sensor_radius
 
         self.state: DroneState = DroneState.IDLE
+        self.is_broken: bool = False
         self.planner: BasePlanner = planner if planner is not None else AStarPlanner()
 
         self.current_path: List[Tuple[int, int]] = []
@@ -432,7 +433,7 @@ class DroneAgent:
 
     def get_intended_next_position(self) -> Tuple[int, int]:
         """Return the coordinate the drone intends to occupy next tick."""
-        if self.state in (DroneState.CHARGING, DroneState.HOVERING, DroneState.DONE):
+        if self.is_broken or self.state in (DroneState.CHARGING, DroneState.HOVERING, DroneState.DONE):
             return self.position
         if not self.current_path:
             return self.position
@@ -449,7 +450,7 @@ class DroneAgent:
         blocked_cells: Optional[Set[Tuple[int, int]]] = None,
     ) -> DroneAction:
         """Execute one complete Perceive -> Plan -> Act cycle."""
-        if override_action == DroneAction.HOVER:
+        if self.is_broken or override_action == DroneAction.HOVER:
             return self._hover_action(env, weather_str)
 
         perception = self.perceive(env, weather_str)

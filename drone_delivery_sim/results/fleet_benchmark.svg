@@ -14,42 +14,30 @@
 <line x1="78" y1="457" x2="878" y2="457" stroke="#aab8ca"/>
 <text x="478.0" y="499" text-anchor="middle" fill="#dce6f3" font-family="Arial" font-size="13">Fleet size (drones)</text>
 <text transform="translate(20 254.5) rotate(-90)" text-anchor="middle" fill="#dce6f3" font-family="Arial" font-size="13">Each metric normalized to its observed maximum (%)</text>
-<polyline fill="none" stroke="#55d6a2" stroke-width="2.5" points="144.7,376.0 211.3,295.0 344.7,133.0 611.3,52.0 878.0,52.0"/>
-<circle cx="144.7" cy="376.0" r="5" fill="#55d6a2"/>
-<circle cx="211.3" cy="295.0" r="5" fill="#55d6a2"/>
-<circle cx="344.7" cy="133.0" r="5" fill="#55d6a2"/>
-<circle cx="611.3" cy="52.0" r="5" fill="#55d6a2"/>
+<polyline fill="none" stroke="#55d6a2" stroke-width="2.5" points="278.0,355.8 478.0,254.5 878.0,52.0"/>
+<circle cx="278.0" cy="355.8" r="5" fill="#55d6a2"/>
+<circle cx="478.0" cy="254.5" r="5" fill="#55d6a2"/>
 <circle cx="878.0" cy="52.0" r="5" fill="#55d6a2"/>
-<polyline fill="none" stroke="#ffd166" stroke-width="2.5" points="144.7,52.0 211.3,52.0 344.7,52.0 611.3,52.0 878.0,52.0"/>
-<circle cx="144.7" cy="52.0" r="5" fill="#ffd166"/>
-<circle cx="211.3" cy="52.0" r="5" fill="#ffd166"/>
-<circle cx="344.7" cy="52.0" r="5" fill="#ffd166"/>
-<circle cx="611.3" cy="52.0" r="5" fill="#ffd166"/>
+<polyline fill="none" stroke="#ffd166" stroke-width="2.5" points="278.0,52.0 478.0,52.0 878.0,52.0"/>
+<circle cx="278.0" cy="52.0" r="5" fill="#ffd166"/>
+<circle cx="478.0" cy="52.0" r="5" fill="#ffd166"/>
 <circle cx="878.0" cy="52.0" r="5" fill="#ffd166"/>
-<polyline fill="none" stroke="#ff8b6b" stroke-width="2.5" points="144.7,163.2 211.3,116.0 344.7,60.9 611.3,52.0 878.0,85.6"/>
-<circle cx="144.7" cy="163.2" r="5" fill="#ff8b6b"/>
-<circle cx="211.3" cy="116.0" r="5" fill="#ff8b6b"/>
-<circle cx="344.7" cy="60.9" r="5" fill="#ff8b6b"/>
-<circle cx="611.3" cy="52.0" r="5" fill="#ff8b6b"/>
-<circle cx="878.0" cy="85.6" r="5" fill="#ff8b6b"/>
-<polyline fill="none" stroke="#64aaff" stroke-width="2.5" points="144.7,399.1 211.3,321.3 344.7,141.0 611.3,52.0 878.0,85.4"/>
-<circle cx="144.7" cy="399.1" r="5" fill="#64aaff"/>
-<circle cx="211.3" cy="321.3" r="5" fill="#64aaff"/>
-<circle cx="344.7" cy="141.0" r="5" fill="#64aaff"/>
-<circle cx="611.3" cy="52.0" r="5" fill="#64aaff"/>
-<circle cx="878.0" cy="85.4" r="5" fill="#64aaff"/>
-<polyline fill="none" stroke="#f06b82" stroke-width="2.5" points="144.7,457.0 211.3,457.0 344.7,457.0 611.3,457.0 878.0,457.0"/>
-<circle cx="144.7" cy="457.0" r="5" fill="#f06b82"/>
-<circle cx="211.3" cy="457.0" r="5" fill="#f06b82"/>
-<circle cx="344.7" cy="457.0" r="5" fill="#f06b82"/>
-<circle cx="611.3" cy="457.0" r="5" fill="#f06b82"/>
+<polyline fill="none" stroke="#ff8b6b" stroke-width="2.5" points="278.0,156.6 478.0,108.3 878.0,52.0"/>
+<circle cx="278.0" cy="156.6" r="5" fill="#ff8b6b"/>
+<circle cx="478.0" cy="108.3" r="5" fill="#ff8b6b"/>
+<circle cx="878.0" cy="52.0" r="5" fill="#ff8b6b"/>
+<polyline fill="none" stroke="#64aaff" stroke-width="2.5" points="278.0,382.8 478.0,283.0 878.0,52.0"/>
+<circle cx="278.0" cy="382.8" r="5" fill="#64aaff"/>
+<circle cx="478.0" cy="283.0" r="5" fill="#64aaff"/>
+<circle cx="878.0" cy="52.0" r="5" fill="#64aaff"/>
+<polyline fill="none" stroke="#f06b82" stroke-width="2.5" points="278.0,457.0 478.0,457.0 878.0,457.0"/>
+<circle cx="278.0" cy="457.0" r="5" fill="#f06b82"/>
+<circle cx="478.0" cy="457.0" r="5" fill="#f06b82"/>
 <circle cx="878.0" cy="457.0" r="5" fill="#f06b82"/>
-<polyline fill="none" stroke="#c59bff" stroke-width="2.5" points="144.7,157.2 211.3,108.0 344.7,52.0 611.3,197.2 878.0,298.5"/>
-<circle cx="144.7" cy="157.2" r="5" fill="#c59bff"/>
-<circle cx="211.3" cy="108.0" r="5" fill="#c59bff"/>
-<circle cx="344.7" cy="52.0" r="5" fill="#c59bff"/>
-<circle cx="611.3" cy="197.2" r="5" fill="#c59bff"/>
-<circle cx="878.0" cy="298.5" r="5" fill="#c59bff"/>
+<polyline fill="none" stroke="#c59bff" stroke-width="2.5" points="278.0,157.2 478.0,108.0 878.0,52.0"/>
+<circle cx="278.0" cy="157.2" r="5" fill="#c59bff"/>
+<circle cx="478.0" cy="108.0" r="5" fill="#c59bff"/>
+<circle cx="878.0" cy="52.0" r="5" fill="#c59bff"/>
 <circle cx="260" cy="494" r="5" fill="#55d6a2"/><text x="272" y="498" fill="#dce6f3" font-family="Arial" font-size="11">Deliveries</text>
 <circle cx="450" cy="494" r="5" fill="#ffd166"/><text x="462" y="498" fill="#dce6f3" font-family="Arial" font-size="11">On-time %</text>
 <circle cx="640" cy="494" r="5" fill="#ff8b6b"/><text x="652" y="498" fill="#dce6f3" font-family="Arial" font-size="11">Avg time</text>

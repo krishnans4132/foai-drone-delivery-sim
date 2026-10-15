@@ -34,28 +34,6 @@
       "total_distance": 142.0,
       "collisions": 0,
       "utilization_pct": 30.4
-    },
-    {
-      "scenario": "simple_clear",
-      "seed": 42,
-      "fleet_size": 8,
-      "deliveries_completed": 5,
-      "on_time_rate_pct": 100.0,
-      "average_delivery_time_ticks": 38.6,
-      "total_distance": 182.0,
-      "collisions": 0,
-      "utilization_pct": 19.5
-    },
-    {
-      "scenario": "simple_clear",
-      "seed": 42,
-      "fleet_size": 12,
-      "deliveries_completed": 5,
-      "on_time_rate_pct": 100.0,
-      "average_delivery_time_ticks": 35.4,
-      "total_distance": 167.0,
-      "collisions": 0,
-      "utilization_pct": 11.9
     }
   ]
 }
